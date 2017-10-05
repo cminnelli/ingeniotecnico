@@ -1,0 +1,406 @@
+/*NAVEGADOR 1*/
+/*COLOR AZUL: #39667F*/
+/*COLOR VERDE: #34B3A0*/
+/*COLOR VERDE2: #43C1AE*/
+/*COLOR BEIGE: #E9ECEF*/
+/*COLOR LETRA BLANCA : rgb(255,255,255)*/
+/*COLOR AMARILLO PASTEL #FFD452*
+/*COLOR NEGRO LETRA: #212529
+<style>
+@import url('https://fonts.googleapis.com/css?family=Catamaran|Dosis|Inconsolata|Indie+Flower|Muli|Noto+Serif|Nunito|PT+Serif|Playfair+Display');
+</style>
+
+font-family: 'Playfair Display', serif;
+font-family: 'PT Serif', serif;
+font-family: 'Muli', sans-serif;
+font-family: 'Indie Flower', cursive;
+font-family: 'Noto Serif', serif;
+font-family: 'Inconsolata', monospace;
+font-family: 'Dosis', sans-serif;
+font-family: 'Nunito', sans-serif;
+font-family: 'Catamaran', sans-serif;
+
+*/
+
+@import url('https://fonts.googleapis.com/css?family=Asap+Condensed|Open+Sans|Raleway|Raleway+Dots|Roboto');
+@import url('https://fonts.googleapis.com/css?family=Catamaran|Dosis|Inconsolata|Indie+Flower|Muli|Noto+Serif|Nunito|PT+Serif|Playfair+Display');
+@import url('http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css');
+$main-color:#34B3A0;
+
+
+/*BOOTSTRAP PARCHES*/
+h1, .container , .container-fluid{
+	margin:0;
+	margin-left: 0px;
+	margin-right: 0;
+	padding:0px;
+	padding-left:0px;
+	padding-right: 0px;
+}
+.navbar-header , .navbar-default {
+	background-color:white;
+	border:none;
+	position: fixed;
+
+}
+
+/*PORTADA*/
+.icon{
+	padding:5px;
+	color:$main-color;
+	font-size: 15px;
+
+}
+.portada{
+	cursor:pointer;
+    padding:100px;
+	font-family: 'Catamaran', sans-serif;
+	height: 100vh;
+	background-attachment: fixed;
+	background-color:white;	
+	background: url('/imagenes/web/ingeniero.png');
+	background-size: 75%;
+	background-position: right;
+	background-repeat: no-repeat;
+	position:relative;
+	@media screen and (max-width:600px){
+		background-image:none;
+		padding:100px;
+	}
+
+	#mainportada{
+	
+		z-index:1;
+		p{
+			letter-spacing: 1.5px;
+			color:#212529;
+			font-size: 18px;
+			padding:35px 0;
+			max-width: 500px;	
+			text-align: left;
+			animation-name:fadeIn;	
+			animation-duration: 6s;
+			@media screen and (max-width:600px){
+			font-size: 14px;
+			text-align: justify;
+			}
+
+			
+		}
+		@keyframes rotar {
+			from{
+			transform: rotate(0deg);
+			}
+			to{
+			transform: rotate(360deg);
+			}
+		}
+		h1{
+			margin:0;
+			text-align: left;
+			font-size: 26px;
+			font-weight: 700;
+			font-family: 'Open Sans', serif;
+			letter-spacing: 1px;
+			color:#60D8C0;
+			font-weight: 700;			
+			animation-name:fadeIn;		
+			animation-duration: 6s;
+			.icono{
+				display: inline-block;
+				animation-name:rotar;
+				animation-duration:6s;
+				animation-iteration-count: infinite;
+			}
+			@media screen and (max-width:600px){
+				font-size: 20px;
+				padding:10px;
+			}
+		}
+
+		
+
+		.logoIT{
+			height: 135px;
+			display: block;
+			margin:0 auto;
+			&:hover{
+				animation-name:bounce;
+				animation-iteration-count: infinite;
+			}
+
+			@media screen and (max-width:600px){
+				height: 135px;
+				padding:10px;
+			}
+			
+		}
+	}
+
+	.skyline{
+		z-index: 2;
+        position: absolute;
+        top:10px;
+        left:0px;
+        opacity: 0.10;
+        height: 100%;
+        width: 100%;
+       
+        filter:blur(3px);
+	
+	}
+
+}
+
+
+
+.portada:hover{
+	transition: 3s;
+;
+}
+
+.portada-but{
+	margin-right:5px;
+	transition:2s;
+	background-color:$main-color;
+	border-radius: none;
+	color:whitesmoke;
+	border:none;
+	font-size: 17px;
+    padding:15px;
+	margin-top:5px;
+	text-align: left;
+
+	@media screen and (max-width:600px){
+		padding:10px;
+		font-size: 12px;
+		text-align: center;
+	}
+}
+.portada-but2{
+	transition:2s;
+	color:$main-color;
+	border-radius: none;
+	background-color:whitesmoke;
+	border:none;
+	font-size: 17px;
+    padding:15px;
+	margin-top:5px;
+	text-align: left;
+
+	@media screen and (max-width:600px){
+		padding:10px;
+		font-size: 12px;
+		text-align: center;
+	}
+}
+
+.portada-but:hover{
+	transition:1s;
+	background-color:whitesmoke;
+	border-radius: none;
+	color:$main-color;
+	border:none;
+	animation-name:tada;
+}
+
+
+.destacado{
+
+	color:darken($main-color,0.8)
+
+
+
+}
+
+
+
+
+
+.navBar{
+
+	width: 100%;
+	position: fixed;
+	z-index: 3;
+	margin-top:30px;
+
+	color:$main-color;
+
+
+	ul{
+		padding:100px;
+		padding-top:20px;
+		margin:0px;
+		text-align: left;
+
+		li{
+			&:first-child{
+			color:orange;
+			}
+			color:black;
+			list-style: none;
+			padding-right: 25px;
+			font-size: 14px;
+			cursor: pointer;
+			display: inline-block;
+			&:hover{
+				transition: 1s;
+				color:orange;
+			}
+			span{
+				padding:3px;
+			}
+		}
+	}
+
+}
+
+$color-titulos:#484848;
+.titulos{
+	color:$color-titulos;
+	text-align: left;
+	padding:5px;
+}
+
+.servicios{
+
+	font-family: 'Catamaran', sans-serif;
+	padding:50px;
+	height: 100vh;
+	background:white;
+	.servWrapper{
+		margin:0 auto;
+		background-color:whitesmoke;
+		box-shadow: 5px 4px 10px #888888;
+		padding:0;
+		margin-right:10px;
+		margin-bottom:20px;
+		z-index:1;
+		&:hover{
+			transition:0.5s;
+			z-index: 3000;
+			transform: scale(1.10,1.10)
+		}
+		&:hover .textWrapper{
+			background-color:whitesmoke;
+			transition:0.8s;
+			color:$main-color;
+		}
+		&:hover .servBody{
+			transition:0.5s;
+			
+			color:$main-color;
+		}
+
+		.servHead{			
+			padding:0px;
+
+			.textWrapper{
+				
+				text-align: center;
+				padding:5px;
+
+				.serv-tit{
+					text-align: center;
+					font-weight: 700;
+					
+					
+				}
+			}
+		}
+		.servBody{
+
+			background-color:whitesmoke;
+			color:$color-titulos;
+			padding:18px;
+			text-align: center;
+		}
+	}
+}
+
+
+
+/*BUSQUEDAS*/
+
+.encabezado{
+	color:rgba(100,100,100,0.8);
+	text-align: center;
+	h3{
+		padding:15px;
+		margin:0;
+		font-size: 40px;
+		text-transform: uppercase;
+		span{
+
+			padding:5px;
+			font-family: 15px;
+		}
+	}
+}
+
+
+.preludeWrapper{
+	color:white;
+	h4{
+		font-size: 15px;
+		text-align: center;
+	}
+
+	background-image: linear-gradient(-20deg, $main-color 0%, crimson 100%);
+	padding:8px;
+	border-radius: 10px;	
+	margin-bottom:30px;
+}
+
+	.busquedas{
+		color: black;
+		background:whitesmoke;
+		height: 100vh;
+		label{
+			padding:5px;
+			font-family: 18px;
+		}
+
+
+
+		.linkedin-wrapper{
+			color:white;
+			background-image: linear-gradient(-20deg, $main-color 0%, rgba(42, 160, 73, 0.7) 100%);
+			padding:30px;
+			.linkedin-icon{
+				padding:5px;
+				font-size: 18px;
+			}
+			#linkedin-but{
+				margin-top:10px;
+
+			}
+		}
+
+		.jobs-result{
+			padding:35px;
+			.job-offer{
+				.job-title{
+					font-weight: 700;
+				}
+
+				transition: 0.8s;
+				box-sizing: border-box;
+				padding:15px;
+				margin-bottom:10px;
+				background-color:white;
+				border-radius: 20px;
+				border: 10px solid whitesmoke;
+				&:hover{
+				background-image: linear-gradient(0deg, $main-color 70%, rgba(42, 160, 73, 0.5) 100%);
+				transition: 1.2s;
+				}
+				&:hover .icon{
+					transition:0.8s;
+					color:whitesmoke;
+				}
+
+			}
+		}
+
+	}

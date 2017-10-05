@@ -1,0 +1,165 @@
+<!DOCTYPE html >
+<html lang="es">
+<head>
+<title>Ingenio Tecnico ℗  - Buscamos talento </title>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link href='imagenes/icons/venta.png' rel='shortcut icon' type='image/png'>
+<link rel="stylesheet" href="css/animate.css">
+
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<script src="libs/jquery/jquery.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<link rel="stylesheet" href="css/estilos.css">
+<link rel="stylesheet" href="css/drawAnimation.css">
+
+
+<!-- ANGULAR SCRIPTS -->
+<script src="/libs/angular/angular.min.js"></script>
+<script src="/js/app.js"></script>
+<script src="/js/controllers/main.js"></script>
+<script src="/js/controllers/busquedas.js"></script>
+
+</head>
+
+
+	<body ng-init="" ng-app="myApp" ng-controller="mainController">
+
+			<nav class="navbar navbar-default">
+					<div class="container-fluid">
+					  <!-- Brand and toggle get grouped for better mobile display -->
+						<!-- <div class="navbar-header">
+							<a class="navbar-brand" href="#">Brand</a>
+						</div> -->
+				  
+					  <!-- Collect the nav links, forms, and other content for toggling -->
+					  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+						<ul class="nav navbar-nav">
+						  <li class=""><a href="#">Servicios <span class="sr-only">(current)</span></a></li>
+						  <li><a href="#">Deja tu CV</a></li>
+						  <li><a href="#">Contacto</a></li>
+						</ul>
+		
+						<!-- <ul class="nav navbar-nav navbar-right">
+						  <li><a href="#">Link</a></li>
+						  <li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+							<ul class="dropdown-menu">
+							  <li><a href="#">Action</a></li>
+							  <li><a href="#">Another action</a></li>
+							  <li><a href="#">Something else here</a></li>
+							  <li role="separator" class="divider"></li>
+							  <li><a href="#">Separated link</a></li>
+							</ul>
+						  </li>
+						</ul> -->
+					  </div><!-- /.navbar-collapse -->
+					</div><!-- /.container-fluid -->
+				  </nav>
+
+		<div id="portada" class="portada wow fadeInRight" data-wow-delay="0.2s" >	
+
+			<div id="mainportada">
+				
+				<img class="logoIT" src="/imagenes/web/LOGO.png" />
+				<h1> <div class="icono"><span class="ion-ionic	"></span></div> Buscamos Talento </h1>
+				<p> Bienvenido a Ingenio Tecnico.  Somos una empresa de <span class="destacado"> Recursos humanos </span> 
+				que busca a los mejores <span class="destacado">Ingenieros del mercado </span>
+				en Latinoamerica y otras partes del mundo
+				</p>
+				<button class="draw portada-but"> Sobre Nosotros</button>
+				<button class="draw portada-but2"> Dejanos tu CV</button>
+			
+			</div>
+		</div>
+
+		<section class = "servicios ">
+			<div class="encabezado">
+				<h3> <span class="ion-cube"></span>IT servicios</h3>
+			</div>
+			
+			<div class="col-xs-12 preludeWrapper">
+					<div>
+						<h4>Nuestro objectivo es brindarle los mejores servicios del universo a la mayoria de la gente del planeta tierra</h4>
+					</div>
+	
+				</div>
+			
+
+			<div ng-repeat="serv in servicios" class="servWrapper col-xs-12 col-lg-3 wow fadeInLeft">
+				<div class="servHead">
+					<img class="img-responsive" src={{serv.img}} />
+					<div class="textWrapper">
+					<h3 class="serv-tit">{{serv.nombre}}</h3>
+					</div>
+				</div>
+				<div class="servBody">
+					<p>{{serv.descripcion}}</p>
+				</div>				
+			</div>
+
+		</section>
+
+
+		<section ng-init="initBusquedas()" class="busquedas" ng-controller="busquedaController">
+			<div class="encabezado">
+				<h3> <span class="ion-cube"></span>IT Busquedas</h3>
+			</div>
+
+			<div class="row">
+
+				<div class="col-xs-12 linkedin-wrapper">
+					<span class="ion-checkmark-circled checked-icon"></span>
+					<label for="basic-url">Dejanos tu perfil de linkedin y postulate!</label>
+					<div class="input-group col-xs-12 col-md-6">
+					  <span class="input-group-addon" id="basic-addon3">linkedin.com/in/</span>
+					  <input type="text" class="form-control" id="linkProfile" aria-describedby="basic-addon3">
+					</div>
+
+					<button ng-click="saveLinkedin()" id="linkedin-but" class="btn btn-warning" type="button"> <span class="linkedin-icon ion-social-linkedin"></span>Guardar perfil</button>
+	
+				</div>
+
+				<div class="col-xs-12 jobs-result">
+					<div ng-repeat="job in joboffer"  class="job-offer col-xs-12 col-md-6 col-lg-3">
+					<h4 class="job-title"> <span class="ion-bookmark icon"></span> {{job.puesto}} <span class="badge badge-warning">{{job.seniority}}</span></h4></strong>
+
+						<p> <span class="ion-person-stalker icon"></span>{{job.area}}</p>
+						<p> <span class="ion-gear-b icon"></span>{{job.descripcion}}</p>
+						<p> <span class="ion-location icon"></span>{{job.location}}</p>
+						<button class="btn btn-default btn-sm">Postularme</button>
+
+					</div>
+
+
+				</div>
+				
+				
+			</div>			
+		</section>	
+
+
+
+
+
+				
+	
+
+
+	</div>
+	
+
+		<!-- STICKY MOJO SCRIPTS -->
+		<script type="text/javascript" src="/js/otros/stickyMojo.js"></script>
+		<script type="text/javascript" src="/js/otros/stickyConfig.js"></script>
+
+	
+	</body>
+
+</html>
