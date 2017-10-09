@@ -348,12 +348,12 @@ $color-titulos:#484848;
 			text-align: center;
 			font-family: 'Catamaran', sans-serif;	
 			.job-offer{
+				height: 400px;
 				p{
 					text-align: left;
+					padding:4px;
+					margin:0px;
 					
-				}
-				p:nth-child(1){
-					text-transform: uppercase; 
 				}
 				.badge{
 					font-size: 10px;
@@ -510,3 +510,14 @@ $color-titulos:#484848;
 	
 		}
 	}
+
+
+.admin{
+	.jobWrapper{
+		padding:5px;
+		.jobMenu{
+			padding:10px;			
+			border-bottom:1px solid $main-color;
+		}
+	}
+}

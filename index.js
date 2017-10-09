@@ -16,26 +16,6 @@ var joboffer = require("./models/jobofferbd_bd.js")
 var linkedinUser = require("./models/linkedin_bd.js") 
 
 
-//agregar para agregar desde panel admin
-// var newJOB = new joboffer ({
-// 	puesto:"Analista de vigas",
-// 	seniority:"semiSenior",
-// 	descripcion:"excelente trabajo",
-// 	area:"Finanzas",
-// 	location:"Balvanera, CABA",
-// 	linkedin:"http//:test",
-// 	requisitos:"expandir requisitos"
-// })
-
-
-// newJOB.save(function(err , job){
-// 	if (err) {
-// 		throw err;
-// 	}else{
-// 		console.log(job)
-// 	}
-// })
-
 /*BODY PARSER MIDDLEWARE*/
 var bodyParser = require("body-parser");
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -74,11 +54,7 @@ app.post("/linkedin/:id" , function(req,res){
 			console.log("nuevo usuario agregado");
 		}
 	})
-	// newProfile.save().then(function(profile){
-	// 	console.log("usuario agregado")
-	// }, function(err){
-	// 	throw err;
-	// })
+
 
 	var linkedin = {
 		url:req.params.id,
@@ -118,6 +94,51 @@ app.get("/linkedinUser" , function(err, res ){
 	
 	
 	})
+
+app.post("/joboffer_new" , function(req,res){
+	var puesto = req.body.puesto;
+	var seniority = req.body.seniority;
+	var area = req.body.area;
+	var descripcion = req.body.descripcion;
+	var requisitos = req.body.requisitos;
+
+	var descripcion2 = descripcion.split(". ");
+	var requisitos2 = requisitos.split(". ");
+
+
+	var location = req.body.location;
+	var linkedin = req.body.linkedin;
+
+
+	var newJob =  new joboffer({
+	puesto:puesto,
+	seniority:seniority,
+	descripcion:descripcion2,
+	area:area,
+	location:location,
+	linkedin:linkedin,
+	requisitos:requisitos2
+
+	})
+
+	newJob.save(function(err , job){
+		if (err){
+			throw err;
+		}else{
+			res.sendFile(path.join(__dirname,"index.html"));
+		}
+	})	
+
+})
+
+/*RESOLVER*/
+// app.post("/eraseJob:id" , function(err , job){
+// var joberase= req.params.id;
+// 		user.remove({puesto:"charlie" ,apellido: “minnelli”}, function(err){  
+// 		    if (err) return handleError(err);
+// 		})
+
+// })
 
 
 

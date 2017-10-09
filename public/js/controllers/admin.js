@@ -2,10 +2,7 @@ admin.controller("adminController" , function($scope , $http){
 
 
 $scope.mylink;
-
-// $scope.getCars = function(){
-// 	var protocol = location.protocol;
-// 	var host = location.host;
+$scope.myjob;
 
 
 $scope.initAdmin = function(){
@@ -23,7 +20,22 @@ $scope.initAdmin = function(){
         }, function errorCallback(response) {
           // called asynchronously if an error occurs
           // or server returns response with an error status.
+      });
+
+      $http({
+          method: 'GET',
+          url: protocol + '//' + host +'/joboffer'   // se adapta al entorno
+        }).then(function successCallback(response) {
+            $scope.myjob = response.data;
+            console.log($scope.myjob);  
+
+          }, function errorCallback(response) {
+            // called asynchronously if an error occurs
+            // or server returns response with an error status.
         });
+
+
+
     
 }
 

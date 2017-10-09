@@ -3,13 +3,14 @@ var mongoose = require("mongoose");
 var Schema = mongoose.Schema;
 
 var jobSchema =  new Schema({
+	empresa:String,
 	puesto:String,
 	seniority:String,
-	descripcion:String,
+	descripcion:Array,
 	area:String,
 	location:String,
 	linkedin:String,
-	requisitos:String	
+	requisitos:Array	
 	
 
 }, {collection:"joboffer"});

@@ -123,7 +123,10 @@
 					<span class="badge badge-success">{{job.seniority}}</span>
 
 						<p> <span class="ion-flag icon"></span>{{job.area}}</p>
-						<p> <span class="ion-cloud icon"></span>{{job.descripcion}}</p>
+						<div>
+							<p style="{margin:0px}" ng-repeat="x in job.descripcion"> {{x}}</p>	
+						</div>
+						
 						<p> <span class="ion-location icon"></span>{{job.location}}</p>
 						<div class="iconGroup">
 							<span class="linkICON ion-gear-b"></span>

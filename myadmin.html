@@ -24,31 +24,44 @@
 <body class="admin" ng-init="initAdmin()"  ng-app="myAdmin" ng-controller="adminController">
 		<section>
 
-			<div class="col-lg-8">
+			<div class="col-lg-4">
 					<div class="encabezado">
 							<h3> <span class="ion-earth"></span>IT JOBOFFER</h3>
 							
 					</div>
 	
-					<form action="" class="">
+					<form action="/joboffer_new" method="post" class="">
 						<div class="row">
-								<div class="form-group col-xs-12 col-md-8 col-md-offset-2">								
-										<input placeholder="Puesto" type="text" class="form-control" id="usr">
+
+							<div class="form-group col-xs-12 col-md-8 col-md-offset-2">	
+									<input placeholder="Empresa" name="empresa" type="text" class="form-control" id="usr">
+							</div>
+
+								<div class="form-group col-xs-12 col-md-8 col-md-offset-2">	
+										<input placeholder="Puesto" name="puesto" type="text" class="form-control" id="usr">
+								</div>
+
+								<div class="form-group col-xs-12 col-md-8 col-md-offset-2">
+										<input placeholder="Seniority" name="seniority" type="text" class="form-control" id="usr">
 								</div>
 								<div class="form-group col-xs-12 col-md-8 col-md-offset-2">									
-										<input placeholder="Seniority" type="text" class="form-control" id="usr">
-								</div>
-								<div class="form-group col-xs-12 col-md-8 col-md-offset-2">									
-										<input placeholder="Area" type="text" class="form-control" id="usr">
+										<input placeholder="Area" name="area" type="text" class="form-control" id="usr">
 								</div>
 								<div class="form-group col-xs-12 col-md-8 col-md-offset-2">			
-										<input placeholder="Descripcion" type="text" class="form-control" id="usr">
+										<input placeholder="Descripcion" name="descripcion" type="text" class="form-control" id="usr">
+
 								</div>
 								<div class="form-group col-xs-12 col-md-8 col-md-offset-2">			
-										<input placeholder="Requisitos" type="text" class="form-control" id="usr">
+										<input placeholder="Requisitos" id="requisitos" name="requisitos" type="text" class="form-control" id="usr">
+										
+
 								</div>
 								<div class="form-group col-xs-12 col-md-8 col-md-offset-2">			
-										<input placeholder="Lugar" type="text" class="form-control" id="usr">
+										<input name="location" placeholder="Lugar" type="text" class="form-control" id="usr">
+								</div>
+
+								<div class="form-group col-xs-12 col-md-8 col-md-offset-2">			
+										<input placeholder="url linkedin" name="linkedin" type="text" class="form-control" id="usr">
 								</div>
 			
 	
@@ -63,6 +76,23 @@
 	
 						<div class="transparencia"></div>
 			</div>
+
+			<div class="col-lg-4">
+					<div class="encabezado">
+							<h3> <span class="ion-earth"></span>IT TRABAJOS</h3>
+					</div>
+
+					<div class="jobWrapper">
+					<div class="jobMenu" ng-repeat="x in myjob">	
+							<h4>  <span class="ion-trash-b"></span> {{x.empresa}}</h4>	
+							<p>	{{x.puesto}}</p>
+
+					</div>
+
+					</div>
+					
+			</div>
+
 			<div class="col-lg-4">
 					<div class="encabezado">
 							<h3> <span class="ion-earth"></span>IT LINKEDIN</h3>

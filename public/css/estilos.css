@@ -236,6 +236,7 @@ h1, .container, .container-fluid {
     text-align: center;
     font-family: 'Catamaran', sans-serif; }
     .busquedas .jobs-result .job-offer {
+      height: 400px;
       transition: 0.8s;
       box-sizing: border-box;
       padding: 15px;
@@ -243,9 +244,9 @@ h1, .container, .container-fluid {
       background-image: linear-gradient(20deg, whitesmoke 0%, #FFFFFF 90%);
       border: 10px solid whitesmoke; }
       .busquedas .jobs-result .job-offer p {
-        text-align: left; }
-      .busquedas .jobs-result .job-offer p:nth-child(1) {
-        text-transform: uppercase; }
+        text-align: left;
+        padding: 4px;
+        margin: 0px; }
       .busquedas .jobs-result .job-offer .badge {
         font-size: 10px;
         letter-spacing: 1.5px; }
@@ -340,5 +341,11 @@ h1, .container, .container-fluid {
     #footer-wrapper .design-contact p {
       padding: 10px;
       margin-bottom: 0; }
+
+.admin .jobWrapper {
+  padding: 5px; }
+  .admin .jobWrapper .jobMenu {
+    padding: 10px;
+    border-bottom: 1px solid #34B3A0; }
 
 /*# sourceMappingURL=estilos.css.map */
