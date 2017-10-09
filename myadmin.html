@@ -14,8 +14,6 @@
 	<link href='imagenes/icons/venta.png' rel='shortcut icon' type='image/png'>
 	<link rel="stylesheet" href="css/animate.css">
 	<link rel="stylesheet" href="css/estilos.css">
-	<link rel="stylesheet" href="libs/materialize/css/materialize.css">
-	<script src="libs/materialize/js/materialize.min.js"></script>
 
 	<script src="/libs/angular/angular.min.js"></script>
 	<script src="/js/app.js"></script>
@@ -23,177 +21,59 @@
 
 </head>
 
-<body class="admin" ng-init="getCars()" ng-app="myAdmin" ng-controller="adminController">
-	<header class="container">
-	<div class="page-header">
-	  <h1>Autos Minn<small> Panel de control</small></h1>
-	</div>
-	</header>
+<body class="admin" ng-init="initAdmin()"  ng-app="myAdmin" ng-controller="adminController">
+		<section>
 
-	<div class="container">
-		<div class="row">
-					<div class="nuevoAutoWrapper col-xs-12 col-lg-8">
-						<label class="etiquetaLab" for="caracteristicas">Agregar Autos</label>			
-						<form method="post" action="/newCar" enctype="multipart/form-data">
-								<div class="input-field col s6 m6">
-									<input id="first_name" type="text" name="nombre">
-									<label for="first_name">Nombre</label>
-								</div>
-
-								<div class="input-field col s6 m6">
-									<input id="patente" type="text" name="patente">
-									<label for="patente">Patente</label>
-								</div>
-
-								
-								<div class="input-field col s12 m6">
-									<input type="text" class="" name="marca">
-									<label for="marca">Marca</label>
-								</div>
-
-								
-								<div class="input-field col s12 m6">
-									<input id="year" type="number" name="year"">
-									<label for="year">Año</label>
-								</div>
-								
-
-								<div class="input-field col s12 m4">
-									<input id="precio" type="number" name="precio">
-									<label for="precio">Precio</label>
-								</div>
-
-								<div class="input-field col s12 m4">
-									<input id="km" type="number" name="km">
-									<label for="km">Kilometros</label>
-								</div>
-
-
-								<div class="input-field col s12 m4">
-									<input id="color" type="text" name="color">
-									<label for="color">Color</label>
-								</div>
-
-								<div class="input-field col s12 m12">
-									<select name="combustible">
-										<option value="" disabled selected>Elegir Combustible</option>
-										<option value="Nafta">Nafta</option>
-										<option value="Diesel">Diesel</option>
-										<option value="Gas">Gas</option>
-									</select>
-									
-								</div>
-
-
-
-								<script>
-
-									$(document).ready(function() {
-										$('select').material_select();
-									});
-								</script>
-
-
-
-								<div class="row equipamiento col-xs-12">
-								<label class="etiquetaLab" for="equipamiento" id="labelEquip"> Equipamiento</label>	
-									<div ng-repeat="x in equipamiento" class="col-sm-12 col-sm-6">
-										<p>
-											<input name="equipamiento" value="{{x}}" class="equipamiento" type="checkbox" id="{{test + $index}}" />
-											<label for="{{test + $index}}">{{x}}</label>
-										</p>	
-									</div>
-
-								<input type="button" class="btn btn-equip" ng-click="check()" value="+ equipamiento">
-								</div>
-
-								
-									<div class="input-field col s12 m6">
-									  <textarea type="text" class="materialize-textarea" name="caracteristicas" id="caracteristicas"  placeholder="Agregar caracteristicas generales"></textarea>
-									  <label class="etiquetaLab" for="caracteristicas">Resumen Equipamiento</label>
-									</div>
-
-									<div class="input-field col s12 m6">
-									  <textarea type="text" class="materialize-textarea" name="comentarios" id="comentarios"  placeholder="Agregar comentarios generales"></textarea>
-									  <label class="etiquetaLab" for="comentarios">Comentarios</label>
-									</div>
-									
-
-									<div class="form-group">
-										<label for="image1">Subir imagenes</label>
-										<input multiple="" enctype="multipart/form-data" type="file" name="image1">
-
-									</div>
-
-
-									<input type="submit" class="btn btn-lg" value="Nuevo Auto">
-									
-
-	
-							</form>
-
-						</div>
-
-						<div class="ultimosWrapper col-xs-12 col-lg-4">
-							<div class="navBoot">
-								<ul class="nav nav-pills nav-stacked">
-								  <li role="presentation" class="active"><a href="/">Ir al sitio</a></li>
-								  <li role="presentation"><a href="/comentarios">Ver Comentarios</a></li>
-								</ul>
-							</div>
-							<div class="ultimosAutos">
-								<label class="etiquetaLab" for="caracteristicas">Ultimos Autos</label>
-								<ul class="collection">
-									<li ng-repeat="auto in autos | orderBy:'time':true" class="collection-item avatar">
-										<img src="{{'http://res.cloudinary.com/dr8t3qbki/image/upload/h_0.1,w_0.1/' + auto.imgUrl[0].substring(0,6) + '-0.jpg'}}" alt="{{auto.nombre}}" alt="" class="circle">
-										<a ng-click="eraseCar(auto.patente)"><span class="trashIcon ion-trash-b"></span></a><span class="title">{{auto.nombre}}</span>
-										<p>{{'patente:' + auto.patente}} <br>
-											{{ auto.precio | currency:"$"}}
-										</p>
-										
-										
-										</li>
-								</ul>
+			<div class="col-lg-8">
+					<div class="encabezado">
+							<h3> <span class="ion-earth"></span>IT JOBOFFER</h3>
 							
-							<div class="options">
-								<div hidden class="eliminar">
-									<form action="/eliminar" method="post">
-										<h5>Eliminar con patente</h5>
-										<div class="form-group">
-											<input type="text" class="form-control" name="patente"   placeholder="Nro de patente"/>
-										</div>
-										<input type="submit" class="btn btn-block btn-eliminar" value="ELIMINAR">
-									</form>
-
+					</div>
+	
+					<form action="" class="">
+						<div class="row">
+								<div class="form-group col-xs-12 col-md-8 col-md-offset-2">								
+										<input placeholder="Puesto" type="text" class="form-control" id="usr">
 								</div>
-								<div class="modificar">
-									<form  action="/modificarEstado" method="post">
-										<label class="etiquetaLab" for="caracteristicas">Cambiar precio</label>	
-										<div class="form-group">
-											<input type="text" class="form-control" name="patente"   placeholder="Nro de patente"/>
-
-										</div>
-										<div class="form-group">
-											<input type="number" class="form-control" name="precio"   placeholder="Modificar precio"/>
-
-										</div>
-
-
-										<input type="submit" class="btn btn-block btn-modificar" value="MODIFICAR">
-									</form>				
+								<div class="form-group col-xs-12 col-md-8 col-md-offset-2">									
+										<input placeholder="Seniority" type="text" class="form-control" id="usr">
 								</div>
-
-
-							</div>
-
-						</div>
-						</div>
-
-				
+								<div class="form-group col-xs-12 col-md-8 col-md-offset-2">									
+										<input placeholder="Area" type="text" class="form-control" id="usr">
+								</div>
+								<div class="form-group col-xs-12 col-md-8 col-md-offset-2">			
+										<input placeholder="Descripcion" type="text" class="form-control" id="usr">
+								</div>
+								<div class="form-group col-xs-12 col-md-8 col-md-offset-2">			
+										<input placeholder="Requisitos" type="text" class="form-control" id="usr">
+								</div>
+								<div class="form-group col-xs-12 col-md-8 col-md-offset-2">			
+										<input placeholder="Lugar" type="text" class="form-control" id="usr">
+								</div>
 			
-		</div>
-		
+	
+							
+	
+						</div>
+						<div class="text-center">
+								<button class="btn btn-info btn-sm"> <span class="ion-paper-airplane"></span>	 Enviar!</button>
+						</div>
+	
+					</form>
+	
+						<div class="transparencia"></div>
+			</div>
+			<div class="col-lg-4">
+					<div class="encabezado">
+							<h3> <span class="ion-earth"></span>IT LINKEDIN</h3>
+					</div>
+					<div>
+							<a ng-repeat="x in mylink" href="{{x.linkedin}}"><p> <span class="ion-social-linkedin"></span> {{x.linkedin}}</p></a>
+					</div>
+					
+			</div>
 
+		</section>
 	
 
 

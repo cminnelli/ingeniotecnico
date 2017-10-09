@@ -26,6 +26,7 @@ font-family: 'Catamaran', sans-serif;
 @import url('https://fonts.googleapis.com/css?family=Catamaran|Dosis|Inconsolata|Indie+Flower|Muli|Noto+Serif|Nunito|PT+Serif|Playfair+Display');
 @import url('http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css');
 $main-color:#34B3A0;
+$secondary-color:#B9DCE0;
 
 
 /*BOOTSTRAP PARCHES*/
@@ -38,116 +39,43 @@ h1, .container , .container-fluid{
 	padding-right: 0px;
 }
 .navbar-header , .navbar-default {
-	background-color:white;
+	background-color:transparent;
+	color:white;
+	font-size: 15px;
+	font-weight: 700;
+	letter-spacing: 1px;
 	border:none;
-	position: fixed;
+}
 
+.navbar-default .navbar-nav>li>a{
+	color:white;
 }
 
 /*PORTADA*/
-.icon{
-	padding:5px;
-	color:$main-color;
-	font-size: 15px;
 
-}
 .portada{
-	cursor:pointer;
-    padding:100px;
-	font-family: 'Catamaran', sans-serif;
+	//foto 1 : https://s3-us-west-2.amazonaws.com/resolveok.com/wp-content/uploads/2017/07/27025105/workplace-safety-Safety-consultant-services-OKC.jpg
+	//foto 2 : http://marsackgroup.com/images/slider/SL_3.png
+	//	background: url('http://www.secoafrica.com/wp-content/uploads/2016/04/qhsevtt_mini_mini_mini_mini_mini.jpg
+	//https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/dTGsD6G/videoblocks-building-engineer-with-a-building-plan-on-a-construction-site-at-sunset_rbqb7rgae_thumbnail-full08.png
+	background: url('https://image.shutterstock.com/z/stock-photo-close-up-engineers-working-on-a-building-site-holding-a-blueprints-engineering-and-architecture-678980125.jpg') no-repeat center  fixed;
+	background-size:cover;
+	background-position: top;
 	height: 100vh;
-	background-attachment: fixed;
-	background-color:white;	
-	background: url('/imagenes/web/ingeniero.png');
-	background-size: 75%;
-	background-position: right;
-	background-repeat: no-repeat;
-	position:relative;
-	@media screen and (max-width:600px){
-		background-image:none;
-		padding:100px;
-	}
-
-	#mainportada{
-	
-		z-index:1;
-		p{
-			letter-spacing: 1.5px;
-			color:#212529;
-			font-size: 18px;
-			padding:35px 0;
-			max-width: 500px;	
-			text-align: left;
-			animation-name:fadeIn;	
-			animation-duration: 6s;
-			@media screen and (max-width:600px){
-			font-size: 14px;
-			text-align: justify;
-			}
-
-			
-		}
-		@keyframes rotar {
-			from{
-			transform: rotate(0deg);
-			}
-			to{
-			transform: rotate(360deg);
-			}
-		}
-		h1{
-			margin:0;
-			text-align: left;
-			font-size: 26px;
-			font-weight: 700;
-			font-family: 'Open Sans', serif;
-			letter-spacing: 1px;
-			color:#60D8C0;
-			font-weight: 700;			
-			animation-name:fadeIn;		
-			animation-duration: 6s;
-			.icono{
-				display: inline-block;
-				animation-name:rotar;
-				animation-duration:6s;
-				animation-iteration-count: infinite;
-			}
-			@media screen and (max-width:600px){
-				font-size: 20px;
-				padding:10px;
-			}
+	.logoIT{
+		height: 170px;
+		display: block;
+		margin:0 auto;
+		&:hover{
+			animation-name:bounce;
+			animation-iteration-count: infinite;
 		}
 
-		
-
-		.logoIT{
+		@media screen and (max-width:600px){
 			height: 135px;
-			display: block;
-			margin:0 auto;
-			&:hover{
-				animation-name:bounce;
-				animation-iteration-count: infinite;
-			}
-
-			@media screen and (max-width:600px){
-				height: 135px;
-				padding:10px;
-			}
-			
+			padding:10px;
 		}
-	}
-
-	.skyline{
-		z-index: 2;
-        position: absolute;
-        top:10px;
-        left:0px;
-        opacity: 0.10;
-        height: 100%;
-        width: 100%;
-       
-        filter:blur(3px);
-	
+		
 	}
 
 }
@@ -265,58 +193,61 @@ $color-titulos:#484848;
 .servicios{
 
 	font-family: 'Catamaran', sans-serif;
-	padding:50px;
+	padding:30px;
 	height: 100vh;
 	background:white;
-	.servWrapper{
-		margin:0 auto;
-		background-color:whitesmoke;
-		box-shadow: 5px 4px 10px #888888;
-		padding:0;
-		margin-right:10px;
-		margin-bottom:20px;
-		z-index:1;
-		&:hover{
-			transition:0.5s;
-			z-index: 3000;
-			transform: scale(1.10,1.10)
-		}
-		&:hover .textWrapper{
-			background-color:whitesmoke;
-			transition:0.8s;
-			color:$main-color;
-		}
-		&:hover .servBody{
-			transition:0.5s;
+	
+		.servGeneral{
+			padding:15px;			
+			.servWrapper{
+				border:10px solid white;
+				margin:0px;
+				padding:0px;
+				background-color:whitesmoke;
 			
-			color:$main-color;
-		}
+				z-index:1;
+				&:hover{
+					transition:0.5s;
+					z-index: 3000;
+					transform: scale(1.06,1.06)
+				}
+				&:hover .textWrapper{
+					background-color:whitesmoke;
+					transition:0.8s;
+					color:$main-color;
+				}
+				&:hover .servBody{
+					transition:0.5s;
+					
+					color:$main-color;
+				}
 
-		.servHead{			
-			padding:0px;
+				.servHead{			
+					padding:0px;
 
-			.textWrapper{
-				
-				text-align: center;
-				padding:5px;
+					.textWrapper{
+						
+						text-align: center;
+						padding:5px;
 
-				.serv-tit{
+						.serv-tit{
+							text-align: center;
+							font-weight: 700;
+							
+							
+						}
+					}
+				}
+				.servBody{
+
+					background-color:whitesmoke;
+					color:$color-titulos;
+					padding:18px;
 					text-align: center;
-					font-weight: 700;
-					
-					
 				}
 			}
 		}
-		.servBody{
-
-			background-color:whitesmoke;
-			color:$color-titulos;
-			padding:18px;
-			text-align: center;
-		}
 	}
-}
 
 
 
@@ -326,9 +257,9 @@ $color-titulos:#484848;
 	color:rgba(100,100,100,0.8);
 	text-align: center;
 	h3{
-		padding:15px;
+		padding:30px;
 		margin:0;
-		font-size: 40px;
+		font-size: 35px;
 		text-transform: uppercase;
 		span{
 
@@ -353,20 +284,43 @@ $color-titulos:#484848;
 }
 
 	.busquedas{
+
+		.row{
+			margin:0;
+		}
 		color: black;
 		background:whitesmoke;
-		height: 100vh;
+		
 		label{
 			padding:5px;
 			font-family: 18px;
+			color:whitesmoke;
 		}
 
 
 
 		.linkedin-wrapper{
-			color:white;
+			text-align: center;			
+			color:rgba(100,100,100,0.8);
 			background-image: linear-gradient(-20deg, $main-color 0%, rgba(42, 160, 73, 0.7) 100%);
-			padding:30px;
+			padding:18px;
+		
+			label,span{
+				color:black;
+			}
+			.linkedin-msg{
+				display: none;
+				text-align: center;
+				color:white;
+				p{
+					span{
+						color:$secondary-color;
+					}				
+					margin:0;
+					padding:5px;
+
+				}
+			}
 			.linkedin-icon{
 				padding:5px;
 				font-size: 18px;
@@ -377,30 +331,182 @@ $color-titulos:#484848;
 			}
 		}
 
+
+		
+		// font-family: 'Playfair Display', serif;
+		// font-family: 'PT Serif', serif;
+		// font-family: 'Muli', sans-serif;
+		// font-family: 'Indie Flower', cursive;
+		// font-family: 'Noto Serif', serif;
+		// font-family: 'Inconsolata', monospace;
+		// font-family: 'Dosis', sans-serif;
+		// font-family: 'Nunito', sans-serif;
+		// font-family: 'Catamaran', sans-serif;
+
 		.jobs-result{
-			padding:35px;
+			padding:15px;
+			text-align: center;
+			font-family: 'Catamaran', sans-serif;	
 			.job-offer{
-				.job-title{
+				p{
+					text-align: left;
+					
+				}
+				p:nth-child(1){
+					text-transform: uppercase; 
+				}
+				.badge{
+					font-size: 10px;
+					letter-spacing: 1.5px;
+				}
+				.iconGroup{
+					text-align: center;
+					.linkICON{
+						padding:5px;
+						color:darken($main-color , 15%);
+						font-size: 30px;
+					
+					}
+				}
+
+				.job-title{					
 					font-weight: 700;
+					color:darken($main-color , 15%);
 				}
 
 				transition: 0.8s;
 				box-sizing: border-box;
 				padding:15px;
 				margin-bottom:10px;
-				background-color:white;
-				border-radius: 20px;
+				background-image:linear-gradient(20deg,  whitesmoke 0% , #FFFFFF 90%);
+				
 				border: 10px solid whitesmoke;
 				&:hover{
-				background-image: linear-gradient(0deg, $main-color 70%, rgba(42, 160, 73, 0.5) 100%);
-				transition: 1.2s;
+				background-image:linear-gradient(20deg,  white 0% ,#9AE8BC 90%);
+				transition: 2s;
+				}
+				.icon{
+					padding:3px;
+					margin-right:4px;
+					color:darken( $main-color , 0.6);
+					font-size: 18px;
 				}
 				&:hover .icon{
 					transition:0.8s;
-					color:whitesmoke;
+								
 				}
 
 			}
 		}
 
+	}
+
+
+	.contacto{
+		background: url('http://cdn.wonderfulengineering.com/wp-content/uploads/2014/03/Engineering-Photos-20.jpg');
+		background-attachment: fixed;
+		background-size: cover;
+		position: relative;
+		z-index: 3;
+		h3{
+			color:black;
+		}
+		.row{
+			padding:0px;
+			margin:0px;
+		}
+		input ,textarea{
+			border-right:none;
+			border-left: none;	
+			font-size: 13px;
+			&:focus{
+				outline: none;
+				box-shadow: none;
+				background-color: rgba(100,100,100,0.25);
+				color:$main-color;
+				transition: 1.6s;
+
+			}
+		}
+		// .transparencia{
+		// 	position: absolute;
+		// 	width: 100%;
+		// 	height: 100%;
+		// 	background-color:lighten(grey,10%);
+			
+		// 	z-index:-1;
+		// 	top:0;
+		// 	opacity: 0.5;
+		// }
+	}
+
+
+	#footer-wrapper{
+		margin-top:30px;
+		.footer-title{
+			font-weight: 700;
+			padding:2px;
+		}
+		.copyright{
+
+			box-shadow:inset 0px 0px 120px rgba(0,0,0,0.4);
+		-webkit-box-shadow:inset 0px 0px 120px rgba(0,0,0,0.4);
+		-moz-box-shadow:inset 0px 0px 120px rgba(0,0,0,0.4);
+	
+		height: 55%;
+		background-color:rgba(105, 120, 131, 0.34);
+		color: black;
+		box-shadow: 10px 10px 5px #888888;
+		padding:18px;
+		.telefono , .direccion , .social-media{
+			padding:10px;
+			text-align: center;
+		}
+		.social-media{
+			text-align: left;
+			a{
+				text-decoration: none;
+				&:hover span{
+					color: lighten($main-color,0.2);
+					transition: 0.7s;
+				}
+				span{
+					color:$main-color;
+					padding:5px;
+					font-size: 30px;
+
+				}
+			}
+
+		}
+		p ,h5{
+			padding:3px;
+			margin-bottom:0;
+			text-align: left;
+			margin:0;
+		span{
+			padding:8px;
+			color: lighten($main-color,0.2);
+		}
+	
+		&:hover{
+			transition:1s;
+			color:lighten($main-color,0.2);
+			};
+		}
+	
+		}
+		.design-contact{
+			cursor:pointer;
+			height: 45%;
+			background-color:#24292E;
+			color:whitesmoke;
+			font-size: 15px;
+			box-shadow: 10px 10px 5px rgba(0,0,0,0.5);
+			p{
+				padding:10px;
+				margin-bottom:0;
+			}
+	
+		}
 	}

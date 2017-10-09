@@ -10,6 +10,7 @@
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 <link href='imagenes/icons/venta.png' rel='shortcut icon' type='image/png'>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.js"></script>
 <link rel="stylesheet" href="css/animate.css">
 
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -17,7 +18,8 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
 <link rel="stylesheet" href="css/estilos.css">
-<link rel="stylesheet" href="css/drawAnimation.css">
+<!-- <link rel="stylesheet" href="css/drawAnimation.css"> -->
+
 
 
 <!-- ANGULAR SCRIPTS -->
@@ -27,113 +29,107 @@
 <script src="/js/controllers/busquedas.js"></script>
 
 </head>
-
+	<script>
+	new WOW().init();
+	</script>
 
 	<body ng-init="" ng-app="myApp" ng-controller="mainController">
 
-			<nav class="navbar navbar-default">
-					<div class="container-fluid">
-					  <!-- Brand and toggle get grouped for better mobile display -->
-						<!-- <div class="navbar-header">
-							<a class="navbar-brand" href="#">Brand</a>
-						</div> -->
-				  
-					  <!-- Collect the nav links, forms, and other content for toggling -->
-					  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-						<ul class="nav navbar-nav">
-						  <li class=""><a href="#">Servicios <span class="sr-only">(current)</span></a></li>
-						  <li><a href="#">Deja tu CV</a></li>
-						  <li><a href="#">Contacto</a></li>
-						</ul>
-		
-						<!-- <ul class="nav navbar-nav navbar-right">
-						  <li><a href="#">Link</a></li>
-						  <li class="dropdown">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-							<ul class="dropdown-menu">
-							  <li><a href="#">Action</a></li>
-							  <li><a href="#">Another action</a></li>
-							  <li><a href="#">Something else here</a></li>
-							  <li role="separator" class="divider"></li>
-							  <li><a href="#">Separated link</a></li>
+		<div id="portada" class="portada wow fadeIn" data-wow-delay="0.2s" >	
+				<nav class="navbar navbar-default">
+						<div class="container-fluid">
+	
+							<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+							<ul class="nav navbar-nav navbar-center">
+								<li class=""><a href="#">Servicios <span class="sr-only">(current)</span></a></li>
+								<li><a href="#">Deja tu CV</a></li>
+								<li><a href="#">Contacto</a></li>
 							</ul>
-						  </li>
-						</ul> -->
-					  </div><!-- /.navbar-collapse -->
-					</div><!-- /.container-fluid -->
-				  </nav>
-
-		<div id="portada" class="portada wow fadeInRight" data-wow-delay="0.2s" >	
+							</div><!-- /.navbar-collapse -->
+						</div><!-- /.container-fluid -->
+				</nav>
 
 			<div id="mainportada">
 				
 				<img class="logoIT" src="/imagenes/web/LOGO.png" />
-				<h1> <div class="icono"><span class="ion-ionic	"></span></div> Buscamos Talento </h1>
+
+				<!-- <h1> <div class="icono"><span class="ion-ionic	"></span></div> Buscamos Talento </h1>
 				<p> Bienvenido a Ingenio Tecnico.  Somos una empresa de <span class="destacado"> Recursos humanos </span> 
 				que busca a los mejores <span class="destacado">Ingenieros del mercado </span>
 				en Latinoamerica y otras partes del mundo
 				</p>
 				<button class="draw portada-but"> Sobre Nosotros</button>
-				<button class="draw portada-but2"> Dejanos tu CV</button>
+				<button class="draw portada-but2"> Dejanos tu CV</button> -->
 			
 			</div>
 		</div>
 
-		<section class = "servicios ">
-			<div class="encabezado">
-				<h3> <span class="ion-cube"></span>IT servicios</h3>
+		<section class = "servicios wow fadeIn">
+			<div class="encabezado wow fadeIn">
+				<h3> <span class="ion-ios-gear"></span>IT servicios</h3>
 			</div>
 			
-			<div class="col-xs-12 preludeWrapper">
+			<div class="col-xs-12 preludeWrapper wow fadeInUp">
 					<div>
 						<h4>Nuestro objectivo es brindarle los mejores servicios del universo a la mayoria de la gente del planeta tierra</h4>
 					</div>
 	
 				</div>
 			
-
-			<div ng-repeat="serv in servicios" class="servWrapper col-xs-12 col-lg-3 wow fadeInLeft">
-				<div class="servHead">
-					<img class="img-responsive" src={{serv.img}} />
-					<div class="textWrapper">
-					<h3 class="serv-tit">{{serv.nombre}}</h3>
+			<div class="servGeneral">			
+				<div ng-repeat="serv in servicios" class="servWrapper col-xs-12 col-sm-4 wow fadeInUp">
+					<div class="servHead">
+						<img class="img-responsive" src={{serv.img}} />
+						<div class="textWrapper">
+						<h3 class="serv-tit">{{serv.nombre}}</h3>
+						</div>
 					</div>
+					<div class="servBody">
+						<p>{{serv.descripcion}}</p>
+					</div>				
 				</div>
-				<div class="servBody">
-					<p>{{serv.descripcion}}</p>
-				</div>				
-			</div>
+		</div>
 
 		</section>
 
 
-		<section ng-init="initBusquedas()" class="busquedas" ng-controller="busquedaController">
-			<div class="encabezado">
-				<h3> <span class="ion-cube"></span>IT Busquedas</h3>
+		<section ng-init="initBusquedas()" class="busquedas wow fadeIn" ng-controller="busquedaController">
+				<div class="row">
+			<div class="encabezado wow fadeIn">
+				<h3> <span class="ion-social-linkedin"></span>IT Busquedas</h3>
 			</div>
 
-			<div class="row">
-
-				<div class="col-xs-12 linkedin-wrapper">
-					<span class="ion-checkmark-circled checked-icon"></span>
-					<label for="basic-url">Dejanos tu perfil de linkedin y postulate!</label>
-					<div class="input-group col-xs-12 col-md-6">
-					  <span class="input-group-addon" id="basic-addon3">linkedin.com/in/</span>
-					  <input type="text" class="form-control" id="linkProfile" aria-describedby="basic-addon3">
+				<div class="col-xs-12 linkedin-wrapper ">
+					<div class="linkedin-msg">
+								<p><span class="ion-checkmark-circled"></span> Muchas gracias, ya estamos en contacto por alguna eventual busqueda!</p>
 					</div>
 
-					<button ng-click="saveLinkedin()" id="linkedin-but" class="btn btn-warning" type="button"> <span class="linkedin-icon ion-social-linkedin"></span>Guardar perfil</button>
+					<div class="linkedin-div wow flipInY">
+							<span class="ion-checkmark-circled checked-icon"></span>
+							<label for="basic-url">Dejanos tu perfil de linkedin</label>
+							<div class="input-group col-xs-12 col-sm-offset-4 col-sm-4">
+								<span class="input-group-addon" id="basic-addon3">linkedin.com/in/</span>
+								<input type="text" class="form-control" id="linkProfile" aria-describedby="basic-addon3">
+							</div>
+							<button ng-click="saveLinkedin()" id="linkedin-but" class="btn btn-default" type="button"> <span class="linkedin-icon ion-social-linkedin"></span>Enviar perfil</button>
+
+					</div>			
 	
 				</div>
 
-				<div class="col-xs-12 jobs-result">
-					<div ng-repeat="job in joboffer"  class="job-offer col-xs-12 col-md-6 col-lg-3">
-					<h4 class="job-title"> <span class="ion-bookmark icon"></span> {{job.puesto}} <span class="badge badge-warning">{{job.seniority}}</span></h4></strong>
+				<div class="col-xs-12 jobs-result wow fadeInUp">
+					<div ng-repeat="job in joboffer"  class="job-offer col-xs-12 col-sm-6 col-md-4 col-lg-3">
+					<h4 class="job-title"> {{job.puesto}} </h4>
+					<span class="badge badge-success">{{job.seniority}}</span>
 
-						<p> <span class="ion-person-stalker icon"></span>{{job.area}}</p>
-						<p> <span class="ion-gear-b icon"></span>{{job.descripcion}}</p>
+						<p> <span class="ion-flag icon"></span>{{job.area}}</p>
+						<p> <span class="ion-cloud icon"></span>{{job.descripcion}}</p>
 						<p> <span class="ion-location icon"></span>{{job.location}}</p>
-						<button class="btn btn-default btn-sm">Postularme</button>
+						<div class="iconGroup">
+							<span class="linkICON ion-gear-b"></span>
+							<a href="{{job.linkedin}}"><span class="linkICON ion-social-linkedin"></span></a>
+						</div>
+		
 
 					</div>
 
@@ -142,8 +138,77 @@
 				
 				
 			</div>			
-		</section>	
+		</section>
+		
+		<section class="contacto wow fadeInDown">
+				<div class="encabezado">
+						<h3> <span class="ion-earth"></span>IT Contacto</h3>
+				</div>
 
+				<form action="" class="">
+					<div class="row">
+							<div class="form-group col-xs-12 col-md-4 col-md-offset-4">								
+									<input placeholder="Nombre" type="text" class="form-control" id="usr">
+							</div>
+							<div class="form-group col-xs-12 col-md-4 col-md-offset-4">									
+									<input placeholder="Asunto" type="text" class="form-control" id="usr">
+							</div>
+							<div class="form-group col-xs-12 col-md-4 col-md-offset-4">									
+									<input placeholder="Mail" type="text" class="form-control" id="usr">
+							</div>
+							<div class="form-group col-xs-12 col-md-4 col-md-offset-4">			
+									<input placeholder="Otro" type="text" class="form-control" id="usr">
+							</div>
+							<div class="form-group col-xs-12 col-md-4 col-md-offset-4">
+									<textarea placeholder="dejanos tu comentario" class="form-control" rows="5" id="comment"></textarea>									
+							</div>
+							
+
+						
+
+					</div>
+					<div class="text-center">
+							<button class="btn btn-default btn-sm"> <span class="ion-paper-airplane"></span>	 Enviar!</button>
+					</div>
+
+				</form>
+
+					<div class="transparencia"></div>
+		</section>
+
+		<div id="footer-wrapper">
+			<footer>
+			<div class=" copyright shadow">
+				<div class="row">
+					<div class="direccion col-xs-12 col-md-offset-2 col-md-3">
+						<h5 class="text-center footer-title">Copyright 2017 Ingenio Tecnico</h5>
+						<p class="text-center">EntreRíos 1457 , Olivos (CP: 1690)</p>
+						<p class="text-center">Buenos Aires, Argentina</p>
+					</div>
+					<div class="telefono col-md-2 ">
+						<h5 class="footer-title" >Telefonos contacto</h5>
+						<p class="text-center"> <span class="ion-social-whatsapp-outline"></span>(54 11) 6-666-7777 </p>
+						<p class="text-center"> <span class="ion-ios-telephone-outline"></span>(011) 4793-4569 </p>
+					</div>
+					<div class="social-media col-md-3 col-xs-12 ">
+						<h5 class="footer-title">Redes Sociales</h5>
+							<a href=""><span class="ion-social-linkedin"></span></a>
+							<a href=""><span class="ion-social-facebook"></span></a>
+							<a href=""><span class="ion-social-instagram"></span></a>
+							<a href=""><span class="ion-social-twitter"></span></a>
+
+						</div>
+				</div>
+			</div>
+			<div class="design-contact">
+			<p class="text-center"> <a onclick="contactMe()"> Diseño por Broom Design ™</a></p>                                                             
+			</div>
+			<script>
+			function contactMe(){
+			alert("Contacto Diseño y Programación web: cminnelli@gmail.com")
+			}
+			</script>
+	
 
 
 

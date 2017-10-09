@@ -34,92 +34,33 @@ h1, .container, .container-fluid {
   padding-right: 0px; }
 
 .navbar-header, .navbar-default {
-  background-color: white;
-  border: none;
-  position: fixed; }
+  background-color: transparent;
+  color: white;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  border: none; }
+
+.navbar-default .navbar-nav > li > a {
+  color: white; }
 
 /*PORTADA*/
-.icon {
-  padding: 5px;
-  color: #34B3A0;
-  font-size: 15px; }
-
 .portada {
-  cursor: pointer;
-  padding: 100px;
-  font-family: 'Catamaran', sans-serif;
-  height: 100vh;
-  background-attachment: fixed;
-  background-color: white;
-  background: url("/imagenes/web/ingeniero.png");
-  background-size: 75%;
-  background-position: right;
-  background-repeat: no-repeat;
-  position: relative; }
-  @media screen and (max-width: 600px) {
-    .portada {
-      background-image: none;
-      padding: 100px; } }
-  .portada #mainportada {
-    z-index: 1; }
-    .portada #mainportada p {
-      letter-spacing: 1.5px;
-      color: #212529;
-      font-size: 18px;
-      padding: 35px 0;
-      max-width: 500px;
-      text-align: left;
-      animation-name: fadeIn;
-      animation-duration: 6s; }
-      @media screen and (max-width: 600px) {
-        .portada #mainportada p {
-          font-size: 14px;
-          text-align: justify; } }
-@keyframes rotar {
-  from {
-    transform: rotate(0deg); }
-  to {
-    transform: rotate(360deg); } }
-    .portada #mainportada h1 {
-      margin: 0;
-      text-align: left;
-      font-size: 26px;
-      font-weight: 700;
-      font-family: 'Open Sans', serif;
-      letter-spacing: 1px;
-      color: #60D8C0;
-      font-weight: 700;
-      animation-name: fadeIn;
-      animation-duration: 6s; }
-      .portada #mainportada h1 .icono {
-        display: inline-block;
-        animation-name: rotar;
-        animation-duration: 6s;
-        animation-iteration-count: infinite; }
-      @media screen and (max-width: 600px) {
-        .portada #mainportada h1 {
-          font-size: 20px;
-          padding: 10px; } }
-    .portada #mainportada .logoIT {
-      height: 135px;
-      display: block;
-      margin: 0 auto; }
-      .portada #mainportada .logoIT:hover {
-        animation-name: bounce;
-        animation-iteration-count: infinite; }
-      @media screen and (max-width: 600px) {
-        .portada #mainportada .logoIT {
-          height: 135px;
-          padding: 10px; } }
-  .portada .skyline {
-    z-index: 2;
-    position: absolute;
-    top: 10px;
-    left: 0px;
-    opacity: 0.10;
-    height: 100%;
-    width: 100%;
-    filter: blur(3px); }
+  background: url("https://image.shutterstock.com/z/stock-photo-close-up-engineers-working-on-a-building-site-holding-a-blueprints-engineering-and-architecture-678980125.jpg") no-repeat center fixed;
+  background-size: cover;
+  background-position: top;
+  height: 100vh; }
+  .portada .logoIT {
+    height: 170px;
+    display: block;
+    margin: 0 auto; }
+    .portada .logoIT:hover {
+      animation-name: bounce;
+      animation-iteration-count: infinite; }
+    @media screen and (max-width: 600px) {
+      .portada .logoIT {
+        height: 135px;
+        padding: 10px; } }
 
 .portada:hover {
   transition: 3s; }
@@ -201,50 +142,50 @@ h1, .container, .container-fluid {
 
 .servicios {
   font-family: 'Catamaran', sans-serif;
-  padding: 50px;
+  padding: 30px;
   height: 100vh;
   background: white; }
-  .servicios .servWrapper {
-    margin: 0 auto;
-    background-color: whitesmoke;
-    box-shadow: 5px 4px 10px #888888;
-    padding: 0;
-    margin-right: 10px;
-    margin-bottom: 20px;
-    z-index: 1; }
-    .servicios .servWrapper:hover {
-      transition: 0.5s;
-      z-index: 3000;
-      transform: scale(1.1, 1.1); }
-    .servicios .servWrapper:hover .textWrapper {
+  .servicios .servGeneral {
+    padding: 15px; }
+    .servicios .servGeneral .servWrapper {
+      border: 10px solid white;
+      margin: 0px;
+      padding: 0px;
       background-color: whitesmoke;
-      transition: 0.8s;
-      color: #34B3A0; }
-    .servicios .servWrapper:hover .servBody {
-      transition: 0.5s;
-      color: #34B3A0; }
-    .servicios .servWrapper .servHead {
-      padding: 0px; }
-      .servicios .servWrapper .servHead .textWrapper {
-        text-align: center;
-        padding: 5px; }
-        .servicios .servWrapper .servHead .textWrapper .serv-tit {
+      z-index: 1; }
+      .servicios .servGeneral .servWrapper:hover {
+        transition: 0.5s;
+        z-index: 3000;
+        transform: scale(1.06, 1.06); }
+      .servicios .servGeneral .servWrapper:hover .textWrapper {
+        background-color: whitesmoke;
+        transition: 0.8s;
+        color: #34B3A0; }
+      .servicios .servGeneral .servWrapper:hover .servBody {
+        transition: 0.5s;
+        color: #34B3A0; }
+      .servicios .servGeneral .servWrapper .servHead {
+        padding: 0px; }
+        .servicios .servGeneral .servWrapper .servHead .textWrapper {
           text-align: center;
-          font-weight: 700; }
-    .servicios .servWrapper .servBody {
-      background-color: whitesmoke;
-      color: #484848;
-      padding: 18px;
-      text-align: center; }
+          padding: 5px; }
+          .servicios .servGeneral .servWrapper .servHead .textWrapper .serv-tit {
+            text-align: center;
+            font-weight: 700; }
+      .servicios .servGeneral .servWrapper .servBody {
+        background-color: whitesmoke;
+        color: #484848;
+        padding: 18px;
+        text-align: center; }
 
 /*BUSQUEDAS*/
 .encabezado {
   color: rgba(100, 100, 100, 0.8);
   text-align: center; }
   .encabezado h3 {
-    padding: 15px;
+    padding: 30px;
     margin: 0;
-    font-size: 40px;
+    font-size: 35px;
     text-transform: uppercase; }
     .encabezado h3 span {
       padding: 5px;
@@ -262,37 +203,142 @@ h1, .container, .container-fluid {
 
 .busquedas {
   color: black;
-  background: whitesmoke;
-  height: 100vh; }
+  background: whitesmoke; }
+  .busquedas .row {
+    margin: 0; }
   .busquedas label {
     padding: 5px;
-    font-family: 18px; }
+    font-family: 18px;
+    color: whitesmoke; }
   .busquedas .linkedin-wrapper {
-    color: white;
+    text-align: center;
+    color: rgba(100, 100, 100, 0.8);
     background-image: linear-gradient(-20deg, #34B3A0 0%, rgba(42, 160, 73, 0.7) 100%);
-    padding: 30px; }
+    padding: 18px; }
+    .busquedas .linkedin-wrapper label, .busquedas .linkedin-wrapper span {
+      color: black; }
+    .busquedas .linkedin-wrapper .linkedin-msg {
+      display: none;
+      text-align: center;
+      color: white; }
+      .busquedas .linkedin-wrapper .linkedin-msg p {
+        margin: 0;
+        padding: 5px; }
+        .busquedas .linkedin-wrapper .linkedin-msg p span {
+          color: #B9DCE0; }
     .busquedas .linkedin-wrapper .linkedin-icon {
       padding: 5px;
       font-size: 18px; }
     .busquedas .linkedin-wrapper #linkedin-but {
       margin-top: 10px; }
   .busquedas .jobs-result {
-    padding: 35px; }
+    padding: 15px;
+    text-align: center;
+    font-family: 'Catamaran', sans-serif; }
     .busquedas .jobs-result .job-offer {
       transition: 0.8s;
       box-sizing: border-box;
       padding: 15px;
       margin-bottom: 10px;
-      background-color: white;
-      border-radius: 20px;
+      background-image: linear-gradient(20deg, whitesmoke 0%, #FFFFFF 90%);
       border: 10px solid whitesmoke; }
+      .busquedas .jobs-result .job-offer p {
+        text-align: left; }
+      .busquedas .jobs-result .job-offer p:nth-child(1) {
+        text-transform: uppercase; }
+      .busquedas .jobs-result .job-offer .badge {
+        font-size: 10px;
+        letter-spacing: 1.5px; }
+      .busquedas .jobs-result .job-offer .iconGroup {
+        text-align: center; }
+        .busquedas .jobs-result .job-offer .iconGroup .linkICON {
+          padding: 5px;
+          color: #23786b;
+          font-size: 30px; }
       .busquedas .jobs-result .job-offer .job-title {
-        font-weight: 700; }
+        font-weight: 700;
+        color: #23786b; }
       .busquedas .jobs-result .job-offer:hover {
-        background-image: linear-gradient(0deg, #34B3A0 70%, rgba(42, 160, 73, 0.5) 100%);
-        transition: 1.2s; }
+        background-image: linear-gradient(20deg, white 0%, #9AE8BC 90%);
+        transition: 2s; }
+      .busquedas .jobs-result .job-offer .icon {
+        padding: 3px;
+        margin-right: 4px;
+        color: #33b19e;
+        font-size: 18px; }
       .busquedas .jobs-result .job-offer:hover .icon {
-        transition: 0.8s;
-        color: whitesmoke; }
+        transition: 0.8s; }
+
+.contacto {
+  background: url("http://cdn.wonderfulengineering.com/wp-content/uploads/2014/03/Engineering-Photos-20.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+  position: relative;
+  z-index: 3; }
+  .contacto h3 {
+    color: black; }
+  .contacto .row {
+    padding: 0px;
+    margin: 0px; }
+  .contacto input, .contacto textarea {
+    border-right: none;
+    border-left: none;
+    font-size: 13px; }
+    .contacto input:focus, .contacto textarea:focus {
+      outline: none;
+      box-shadow: none;
+      background-color: rgba(100, 100, 100, 0.25);
+      color: #34B3A0;
+      transition: 1.6s; }
+
+#footer-wrapper {
+  margin-top: 30px; }
+  #footer-wrapper .footer-title {
+    font-weight: 700;
+    padding: 2px; }
+  #footer-wrapper .copyright {
+    box-shadow: inset 0px 0px 120px rgba(0, 0, 0, 0.4);
+    -webkit-box-shadow: inset 0px 0px 120px rgba(0, 0, 0, 0.4);
+    -moz-box-shadow: inset 0px 0px 120px rgba(0, 0, 0, 0.4);
+    height: 55%;
+    background-color: rgba(105, 120, 131, 0.34);
+    color: black;
+    box-shadow: 10px 10px 5px #888888;
+    padding: 18px; }
+    #footer-wrapper .copyright .telefono, #footer-wrapper .copyright .direccion, #footer-wrapper .copyright .social-media {
+      padding: 10px;
+      text-align: center; }
+    #footer-wrapper .copyright .social-media {
+      text-align: left; }
+      #footer-wrapper .copyright .social-media a {
+        text-decoration: none; }
+        #footer-wrapper .copyright .social-media a:hover span {
+          color: #34b4a1;
+          transition: 0.7s; }
+        #footer-wrapper .copyright .social-media a span {
+          color: #34B3A0;
+          padding: 5px;
+          font-size: 30px; }
+    #footer-wrapper .copyright p, #footer-wrapper .copyright h5 {
+      padding: 3px;
+      margin-bottom: 0;
+      text-align: left;
+      margin: 0; }
+      #footer-wrapper .copyright p span, #footer-wrapper .copyright h5 span {
+        padding: 8px;
+        color: #34b4a1; }
+      #footer-wrapper .copyright p:hover, #footer-wrapper .copyright h5:hover {
+        transition: 1s;
+        color: #34b4a1; }
+  #footer-wrapper .design-contact {
+    cursor: pointer;
+    height: 45%;
+    background-color: #24292E;
+    color: whitesmoke;
+    font-size: 15px;
+    box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.5); }
+    #footer-wrapper .design-contact p {
+      padding: 10px;
+      margin-bottom: 0; }
 
 /*# sourceMappingURL=estilos.css.map */
