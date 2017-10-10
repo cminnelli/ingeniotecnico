@@ -2,9 +2,9 @@ app.controller("mainController" , function($scope , $http){
 
 
 $scope.servicios = [
-	{nombre:"Operaciones" , descripcion:"Lorem, ipsum dolor sit amet consectetur adipisicing elit. Beatae ipsa eveniet reiciendis quos sit? Odit quasi sit itaqu" , img:"/imagenes/web/service1.jpg"},
-	{nombre:"Recruit" , descripcion:"Lorem, ipsum dolor sit amet consectetur adipisicing elit. Beatae ipsa eveniet reiciendis quos sit? Odit quasi sit itaqu" , img:"/imagenes/web/service1.jpg"},
-	{nombre:"Analytics" , descripcion:"Lorem, ipsum dolor sit amet consectetur adipisicing elit. Beatae ipsa eveniet reiciendis quos sit? Odit quasi sit itaqu" , img:"/imagenes/web/service1.jpg"},
+	{nombre:"Busqueda y selección" , descripcion:"Lorem, ipsum dolor sit amet consectetur adipisicing elit. Beatae ipsa eveniet reiciendis quos sit? Odit quasi sit itaqu" , img:"/imagenes/web/service1.jpg"},
+	{nombre:"Capacitación" , descripcion:"Lorem, ipsum dolor sit amet consectetur adipisicing elit. Beatae ipsa eveniet reiciendis quos sit? Odit quasi sit itaqu" , img:"/imagenes/web/service1.jpg"},
+	{nombre:"Evaluaciones técnicas" , descripcion:"Lorem, ipsum dolor sit amet consectetur adipisicing elit. Beatae ipsa eveniet reiciendis quos sit? Odit quasi sit itaqu" , img:"/imagenes/web/service1.jpg"},
 	
 ]
 

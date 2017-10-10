@@ -68,7 +68,7 @@ h1, .container, .container-fluid {
 .portada-but {
   margin-right: 5px;
   transition: 2s;
-  background-color: #34B3A0;
+  background-color: #4528B6;
   border-radius: none;
   color: whitesmoke;
   border: none;
@@ -84,7 +84,7 @@ h1, .container, .container-fluid {
 
 .portada-but2 {
   transition: 2s;
-  color: #34B3A0;
+  color: #4528B6;
   border-radius: none;
   background-color: whitesmoke;
   border: none;
@@ -102,19 +102,19 @@ h1, .container, .container-fluid {
   transition: 1s;
   background-color: whitesmoke;
   border-radius: none;
-  color: #34B3A0;
+  color: #4528B6;
   border: none;
   animation-name: tada; }
 
 .destacado {
-  color: #33b09d; }
+  color: #4427b3; }
 
 .navBar {
   width: 100%;
   position: fixed;
   z-index: 3;
   margin-top: 30px;
-  color: #34B3A0; }
+  color: #4528B6; }
   .navBar ul {
     padding: 100px;
     padding-top: 20px;
@@ -143,7 +143,6 @@ h1, .container, .container-fluid {
 .servicios {
   font-family: 'Catamaran', sans-serif;
   padding: 30px;
-  height: 100vh;
   background: white; }
   .servicios .servGeneral {
     padding: 15px; }
@@ -151,19 +150,17 @@ h1, .container, .container-fluid {
       border: 10px solid white;
       margin: 0px;
       padding: 0px;
-      background-color: whitesmoke;
-      z-index: 1; }
+      background-color: white; }
       .servicios .servGeneral .servWrapper:hover {
         transition: 0.5s;
-        z-index: 3000;
         transform: scale(1.06, 1.06); }
       .servicios .servGeneral .servWrapper:hover .textWrapper {
-        background-color: whitesmoke;
+        background-color: white;
         transition: 0.8s;
-        color: #34B3A0; }
+        color: #4528B6; }
       .servicios .servGeneral .servWrapper:hover .servBody {
         transition: 0.5s;
-        color: #34B3A0; }
+        color: #4528B6; }
       .servicios .servGeneral .servWrapper .servHead {
         padding: 0px; }
         .servicios .servGeneral .servWrapper .servHead .textWrapper {
@@ -173,7 +170,7 @@ h1, .container, .container-fluid {
             text-align: center;
             font-weight: 700; }
       .servicios .servGeneral .servWrapper .servBody {
-        background-color: whitesmoke;
+        background-color: white;
         color: #484848;
         padding: 18px;
         text-align: center; }
@@ -181,7 +178,8 @@ h1, .container, .container-fluid {
 /*BUSQUEDAS*/
 .encabezado {
   color: rgba(100, 100, 100, 0.8);
-  text-align: center; }
+  text-align: center;
+  font-family: 'Catamaran', sans-serif; }
   .encabezado h3 {
     padding: 30px;
     margin: 0;
@@ -193,7 +191,7 @@ h1, .container, .container-fluid {
 
 .preludeWrapper {
   color: white;
-  background-image: linear-gradient(-20deg, #34B3A0 0%, crimson 100%);
+  background-image: linear-gradient(-20deg, #4528B6 0%, crimson 100%);
   padding: 8px;
   border-radius: 10px;
   margin-bottom: 30px; }
@@ -202,6 +200,7 @@ h1, .container, .container-fluid {
     text-align: center; }
 
 .busquedas {
+  background-image: linear-gradient(20deg, whitesmoke 0%, rgba(100, 100, 100, 0.8) 90%);
   color: black;
   background: whitesmoke; }
   .busquedas .row {
@@ -213,7 +212,7 @@ h1, .container, .container-fluid {
   .busquedas .linkedin-wrapper {
     text-align: center;
     color: rgba(100, 100, 100, 0.8);
-    background-image: linear-gradient(-20deg, #34B3A0 0%, rgba(42, 160, 73, 0.7) 100%);
+    background-image: linear-gradient(-20deg, #4528B6 0%, rgba(42, 160, 73, 0.7) 100%);
     padding: 18px; }
     .busquedas .linkedin-wrapper label, .busquedas .linkedin-wrapper span {
       color: black; }
@@ -232,46 +231,49 @@ h1, .container, .container-fluid {
     .busquedas .linkedin-wrapper #linkedin-but {
       margin-top: 10px; }
   .busquedas .jobs-result {
-    padding: 15px;
+    padding: 20px;
     text-align: center;
-    font-family: 'Catamaran', sans-serif; }
+    font-family: 'Catamaran', sans-serif;
+    padding: 15px;
+    margin-bottom: 10px;
+    border: 10px solid whitesmoke; }
     .busquedas .jobs-result .job-offer {
-      height: 400px;
-      transition: 0.8s;
-      box-sizing: border-box;
-      padding: 15px;
-      margin-bottom: 10px;
-      background-image: linear-gradient(20deg, whitesmoke 0%, #FFFFFF 90%);
-      border: 10px solid whitesmoke; }
+      padding: 10x;
+      height: 350px;
+      text-align: right;
+      background-color: white;
+      border: 5px solid whitesmoke; }
       .busquedas .jobs-result .job-offer p {
         text-align: left;
-        padding: 4px;
+        padding: 2px;
         margin: 0px; }
       .busquedas .jobs-result .job-offer .badge {
         font-size: 10px;
         letter-spacing: 1.5px; }
-      .busquedas .jobs-result .job-offer .iconGroup {
-        text-align: center; }
-        .busquedas .jobs-result .job-offer .iconGroup .linkICON {
-          padding: 5px;
-          color: #23786b;
-          font-size: 30px; }
+      .busquedas .jobs-result .job-offer .iconGroup .linkICON {
+        padding: 5px;
+        color: #0077B5;
+        font-size: 40px; }
       .busquedas .jobs-result .job-offer .job-title {
+        margin-top: 10px;
         font-weight: 700;
-        color: #23786b; }
+        color: #0e0824; }
       .busquedas .jobs-result .job-offer:hover {
-        background-image: linear-gradient(20deg, white 0%, #9AE8BC 90%);
+        background-color: whitesmoke;
         transition: 2s; }
       .busquedas .jobs-result .job-offer .icon {
         padding: 3px;
         margin-right: 4px;
-        color: #33b19e;
+        color: #0077B5;
         font-size: 18px; }
       .busquedas .jobs-result .job-offer:hover .icon {
         transition: 0.8s; }
+      .busquedas .jobs-result .job-offer label {
+        color: rgba(100, 100, 100, 0.8);
+        text-align: left; }
 
 .contacto {
-  background: url("http://cdn.wonderfulengineering.com/wp-content/uploads/2014/03/Engineering-Photos-20.jpg");
+  background: url("/imagenes/web/contact.jpeg") no-repeat;
   background-attachment: fixed;
   background-size: cover;
   position: relative;
@@ -289,7 +291,7 @@ h1, .container, .container-fluid {
       outline: none;
       box-shadow: none;
       background-color: rgba(100, 100, 100, 0.25);
-      color: #34B3A0;
+      color: #4528B6;
       transition: 1.6s; }
 
 #footer-wrapper {
@@ -314,10 +316,10 @@ h1, .container, .container-fluid {
       #footer-wrapper .copyright .social-media a {
         text-decoration: none; }
         #footer-wrapper .copyright .social-media a:hover span {
-          color: #34b4a1;
+          color: #4528b7;
           transition: 0.7s; }
         #footer-wrapper .copyright .social-media a span {
-          color: #34B3A0;
+          color: #4528B6;
           padding: 5px;
           font-size: 30px; }
     #footer-wrapper .copyright p, #footer-wrapper .copyright h5 {
@@ -327,10 +329,10 @@ h1, .container, .container-fluid {
       margin: 0; }
       #footer-wrapper .copyright p span, #footer-wrapper .copyright h5 span {
         padding: 8px;
-        color: #34b4a1; }
+        color: #4528b7; }
       #footer-wrapper .copyright p:hover, #footer-wrapper .copyright h5:hover {
         transition: 1s;
-        color: #34b4a1; }
+        color: #4528b7; }
   #footer-wrapper .design-contact {
     cursor: pointer;
     height: 45%;
@@ -346,6 +348,6 @@ h1, .container, .container-fluid {
   padding: 5px; }
   .admin .jobWrapper .jobMenu {
     padding: 10px;
-    border-bottom: 1px solid #34B3A0; }
+    border-bottom: 1px solid #4528B6; }
 
 /*# sourceMappingURL=estilos.css.map */

@@ -25,8 +25,10 @@ font-family: 'Catamaran', sans-serif;
 @import url('https://fonts.googleapis.com/css?family=Asap+Condensed|Open+Sans|Raleway|Raleway+Dots|Roboto');
 @import url('https://fonts.googleapis.com/css?family=Catamaran|Dosis|Inconsolata|Indie+Flower|Muli|Noto+Serif|Nunito|PT+Serif|Playfair+Display');
 @import url('http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css');
-$main-color:#34B3A0;
+$main-color:#4528B6;
 $secondary-color:#B9DCE0;
+$color-linkedin:#0077B5;
+$color-grey:rgba(100,100,100,0.8);
 
 
 /*BOOTSTRAP PARCHES*/
@@ -194,7 +196,7 @@ $color-titulos:#484848;
 
 	font-family: 'Catamaran', sans-serif;
 	padding:30px;
-	height: 100vh;
+	
 	background:white;
 	
 		.servGeneral{
@@ -203,16 +205,15 @@ $color-titulos:#484848;
 				border:10px solid white;
 				margin:0px;
 				padding:0px;
-				background-color:whitesmoke;
+				background-color:white;
 			
-				z-index:1;
+				
 				&:hover{
 					transition:0.5s;
-					z-index: 3000;
 					transform: scale(1.06,1.06)
 				}
 				&:hover .textWrapper{
-					background-color:whitesmoke;
+					background-color:white;
 					transition:0.8s;
 					color:$main-color;
 				}
@@ -240,7 +241,7 @@ $color-titulos:#484848;
 				}
 				.servBody{
 
-					background-color:whitesmoke;
+					background-color:white;
 					color:$color-titulos;
 					padding:18px;
 					text-align: center;
@@ -254,8 +255,9 @@ $color-titulos:#484848;
 /*BUSQUEDAS*/
 
 .encabezado{
-	color:rgba(100,100,100,0.8);
+	color:$color-grey;
 	text-align: center;
+	font-family: 'Catamaran', sans-serif;	
 	h3{
 		padding:30px;
 		margin:0;
@@ -284,7 +286,7 @@ $color-titulos:#484848;
 }
 
 	.busquedas{
-
+		background-image:linear-gradient(20deg,  whitesmoke 0% , $color-grey 90%);	
 		.row{
 			margin:0;
 		}
@@ -344,56 +346,64 @@ $color-titulos:#484848;
 		// font-family: 'Catamaran', sans-serif;
 
 		.jobs-result{
-			padding:15px;
+			padding:20px;
 			text-align: center;
-			font-family: 'Catamaran', sans-serif;	
+			font-family: 'Catamaran', sans-serif;			
+			padding:15px;
+			margin-bottom:10px;
+				
+			border: 10px solid whitesmoke;	
 			.job-offer{
-				height: 400px;
+				padding:10x;
+				height: 350px;
+				text-align: right;
+				background-color:white;
+				border: 5px solid whitesmoke;
 				p{
 					text-align: left;
-					padding:4px;
-					margin:0px;
-					
+					padding:2px;
+					margin:0px;					
 				}
+
 				.badge{
 					font-size: 10px;
 					letter-spacing: 1.5px;
 				}
 				.iconGroup{
-					text-align: center;
+				
 					.linkICON{
 						padding:5px;
-						color:darken($main-color , 15%);
-						font-size: 30px;
+						color:$color-linkedin;
+						font-size: 40px;
 					
 					}
 				}
 
-				.job-title{					
+				.job-title{
+					margin-top:10px;					
 					font-weight: 700;
-					color:darken($main-color , 15%);
+					color:darken($main-color , 35%);
 				}
 
-				transition: 0.8s;
-				box-sizing: border-box;
-				padding:15px;
-				margin-bottom:10px;
-				background-image:linear-gradient(20deg,  whitesmoke 0% , #FFFFFF 90%);
-				
-				border: 10px solid whitesmoke;
+
 				&:hover{
-				background-image:linear-gradient(20deg,  white 0% ,#9AE8BC 90%);
+				background-color: whitesmoke;
 				transition: 2s;
 				}
 				.icon{
 					padding:3px;
 					margin-right:4px;
-					color:darken( $main-color , 0.6);
+					color:#0077B5;
 					font-size: 18px;
 				}
 				&:hover .icon{
 					transition:0.8s;
 								
+				}
+				label{
+					color:$color-grey;
+					text-align: left;
+					
 				}
 
 			}
@@ -403,7 +413,7 @@ $color-titulos:#484848;
 
 
 	.contacto{
-		background: url('http://cdn.wonderfulengineering.com/wp-content/uploads/2014/03/Engineering-Photos-20.jpg');
+		background: url('/imagenes/web/contact.jpeg') no-repeat;
 		background-attachment: fixed;
 		background-size: cover;
 		position: relative;
