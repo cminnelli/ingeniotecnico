@@ -7,7 +7,7 @@
 	<meta name="viewport" content="width=device-width">
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
 
-	<script src="/libs/jquery/jquery.js"></script>
+
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
@@ -15,6 +15,12 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.js"></script>
 	<link rel="stylesheet" href="css/animate.css">
 	<link rel="stylesheet" href="css/estilos.css">
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+	<link rel="stylesheet" href="/resources/demos/style.css">
+	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+  
 
 	<script src="/libs/angular/angular.min.js"></script>
 	<script src="/js/app.js"></script>
@@ -22,7 +28,25 @@
 
 </head>
 
+
+
 <body class="admin" ng-init="initAdmin()"  ng-app="myAdmin" ng-controller="adminController">
+		<script>
+				 $( function() {
+					var availableTags = [
+					  "senior",
+					  "semiSenior",
+					  "Junior",
+					  "Supervisor",
+					  "Jefatura",
+			
+					];
+					$("#seniority").autocomplete({
+					  source: availableTags
+					});
+				  } );
+			
+			</script>
 		<section>
 			<script>new WOW().init()</script>
 
@@ -36,34 +60,30 @@
 						<div class="row">
 
 							<div class="form-group col-xs-12 col-md-8 col-md-offset-2">	
-									<input placeholder="Empresa" name="empresa" type="text" class="form-control" id="usr">
+									<input placeholder="Empresa" name="empresa" type="text" class="form-control" id="">
 							</div>
 
 								<div class="form-group col-xs-12 col-md-8 col-md-offset-2">	
-										<input placeholder="Puesto" name="puesto" type="text" class="form-control" id="usr">
+										<input placeholder="Puesto" name="puesto" type="text" class="form-control" id="">
 								</div>
 
-								<div class="form-group col-xs-12 col-md-8 col-md-offset-2">
-										<input placeholder="Seniority" name="seniority" type="text" class="form-control" id="usr">
+								<div class="form-group col-xs-12 col-md-8 col-md-offset-2 ui-widget ">
+										<input placeholder="Seniority" name="seniority" type="text" class="form-control" id="seniority">
 								</div>
 								<div class="form-group col-xs-12 col-md-8 col-md-offset-2">									
-										<input placeholder="Area" name="area" type="text" class="form-control" id="usr">
+										<input placeholder="Area" name="area" type="text" class="form-control" id="">
 								</div>
 								<div class="form-group col-xs-12 col-md-8 col-md-offset-2">			
-										<input placeholder="Descripcion" name="descripcion" type="text" class="form-control" id="usr">
+										<input placeholder="Descripcion" name="descripcion" type="text" class="form-control" id="">
 
-								</div>
-								<div class="form-group col-xs-12 col-md-8 col-md-offset-2">			
-										<input placeholder="Requisitos" id="requisitos" name="requisitos" type="text" class="form-control" id="usr">
-										
-
-								</div>
-								<div class="form-group col-xs-12 col-md-8 col-md-offset-2">			
-										<input name="location" placeholder="Lugar" type="text" class="form-control" id="usr">
 								</div>
 
 								<div class="form-group col-xs-12 col-md-8 col-md-offset-2">			
-										<input placeholder="url linkedin" name="linkedin" type="text" class="form-control" id="usr">
+										<input name="location" placeholder="Lugar" type="text" class="form-control" id="">
+								</div>
+
+								<div class="form-group col-xs-12 col-md-8 col-md-offset-2">			
+										<input placeholder="url linkedin" name="linkedin" type="text" class="form-control" id="">
 								</div>
 			
 	
@@ -79,15 +99,16 @@
 						<div class="transparencia"></div>
 			</div>
 
-			<div class="col-lg-4 wow fadeInUp">
+			<div class="col-lg-5 wow fadeInUp">
 					<div class="encabezado">
 							<h3> <span class="ion-earth"></span>IT TRABAJOS</h3>
 					</div>
 
 					<div class="jobWrapper">
 					<div class="jobMenu" ng-repeat="x in myjob">	
-							<h4>  <span class="ion-trash-b"></span> {{x.empresa}}</h4>	
+							<h4 ng-click="removeJob(x._id)">  <span class="ion-trash-b"></span> {{x.empresa}}</h4>	
 							<p>	{{x.puesto}}</p>
+							<p>	{{x.location}}</p>
 
 					</div>
 
@@ -95,18 +116,18 @@
 					
 			</div>
 
-			<div class="col-lg-4 wow fadeInDown">
+			<div class="col-lg-3 wow fadeInDown linkedin">
 					<div class="encabezado">
 							<h3> <span class="ion-earth"></span>IT LINKEDIN</h3>
 					</div>
-					<div>
+					<div class="">
 							<a ng-repeat="x in mylink" href="{{x.linkedin}}"><p> <span class="ion-social-linkedin"></span> {{x.linkedin}}</p></a>
 					</div>
 					
 			</div>
 
 		</section>
-	
+
 
 
 	<!-- STICKY MOJO SCRIPTS -->

@@ -4,12 +4,18 @@ var app = express();
 const port = process.env.PORT || 3000  
 var path = require("path");
 var fs = require("fs");
+var nodemailer = require("./node_aux/nodeMailer.js")
 //instalar nodemon para actualizar cuando guardo
+
+/*NODE MAILER CALL*/
+// nodemailer.hola("charlie")
+
+
 
 /*MONGO Y MONGOOSE*/
 var mongoose = require("mongoose");
 mongoose.connect("mongodb://ezeburr:alaska77@ds161194.mlab.com:61194/ingeniobd"); //MODO REMOTO MLAB
-/*mongoose.connect("mongodb://localhost:27017/autos");  MODO LOCAL  */
+// /*mongoose.connect("mongodb://localhost:27017/autos");  MODO LOCAL  */
 
 /*MODELOS DE MONGOOSE*/
 var joboffer = require("./models/jobofferbd_bd.js") 
@@ -25,6 +31,8 @@ app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, 'public')));
 
 
+
+/*APP ROUTES*/
 app.listen(port, function(req , res){
 	console.log("Listening ingenio tecnico in port: " + port);
 })
@@ -103,8 +111,6 @@ app.post("/joboffer_new" , function(req,res){
 	var requisitos = req.body.requisitos;
 
 	var descripcion2 = descripcion.split(". ");
-	var requisitos2 = requisitos.split(". ");
-
 
 	var location = req.body.location;
 	var linkedin = req.body.linkedin;
@@ -117,7 +123,8 @@ app.post("/joboffer_new" , function(req,res){
 	area:area,
 	location:location,
 	linkedin:linkedin,
-	requisitos:requisitos2
+
+	fecha: Date.now()
 
 	})
 
@@ -131,6 +138,21 @@ app.post("/joboffer_new" , function(req,res){
 
 })
 
+app.post("/joboffer_remove/:job" , function(req,res){
+	var jobId = req.params.job;
+
+	joboffer.remove({_id:jobId} , function(err){
+		console.log(err)
+	})
+
+	res.send("eliminamos "+ jobId)
+
+})
+
+app.get("/hola/:fruits&:papas",function(req,res){
+	res.send(req.params.fruits + req.params.papas)
+})
+
 /*RESOLVER*/
 // app.post("/eraseJob:id" , function(err , job){
 // var joberase= req.params.id;
@@ -141,4 +163,6 @@ app.post("/joboffer_new" , function(req,res){
 // })
 
 
+
+//sendgrid trest
 

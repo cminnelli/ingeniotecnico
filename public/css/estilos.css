@@ -21,9 +21,11 @@ font-family: 'Nunito', sans-serif;
 font-family: 'Catamaran', sans-serif;
 
 */
+@import url("https://fonts.googleapis.com/css?family=Alfa+Slab+One|Bevan|Sanchez");
 @import url("https://fonts.googleapis.com/css?family=Asap+Condensed|Open+Sans|Raleway|Raleway+Dots|Roboto");
 @import url("https://fonts.googleapis.com/css?family=Catamaran|Dosis|Inconsolata|Indie+Flower|Muli|Noto+Serif|Nunito|PT+Serif|Playfair+Display");
 @import url("http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css");
+@import url("../css/animate.css");
 /*BOOTSTRAP PARCHES*/
 h1, .container, .container-fluid {
   margin: 0;
@@ -34,33 +36,84 @@ h1, .container, .container-fluid {
   padding-right: 0px; }
 
 .navbar-header, .navbar-default {
-  background-color: transparent;
-  color: white;
-  font-size: 15px;
-  font-weight: 700;
-  letter-spacing: 1px;
+  border-radius: 0;
+  background: rgba(255, 255, 255, 0.3);
   border: none; }
 
 .navbar-default .navbar-nav > li > a {
-  color: white; }
+  color: whitesmoke; }
+
+.navbar-default .navbar-nav > li {
+  color: rgba(30, 30, 30, 0.8);
+  font-family: 'Roboto', sans-serif;
+  font-size: 13px;
+  padding: 0px;
+  letter-spacing: 1.5px; }
+
+.highNav {
+  height: 40px;
+  background-color: #0077B5;
+  position: fixed;
+  animation: tada 5s;
+  transition: 0.6s; }
 
 /*PORTADA*/
 .portada {
-  background: url("https://image.shutterstock.com/z/stock-photo-close-up-engineers-working-on-a-building-site-holding-a-blueprints-engineering-and-architecture-678980125.jpg") no-repeat center fixed;
+  background: url("http://bbcontractingmo.com/wp-content/uploads/2016/09/Custom-Home-Remodeling.jpg") no-repeat top fixed;
   background-size: cover;
-  background-position: top;
-  height: 100vh; }
-  .portada .logoIT {
-    height: 170px;
-    display: block;
-    margin: 0 auto; }
-    .portada .logoIT:hover {
-      animation-name: bounce;
-      animation-iteration-count: infinite; }
-    @media screen and (max-width: 600px) {
-      .portada .logoIT {
-        height: 135px;
-        padding: 10px; } }
+  background-position: 0px;
+  height: 100vh;
+  position: relative;
+  z-index: 1000;
+  box-shadow: inset 0px 0px 120px rgba(0, 0, 0, 0.9); }
+  .portada .transparencia {
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0; }
+  .portada .slogans {
+    font-family: 'Roboto', sans-serif; }
+  .portada .shide {
+    opacity: 0;
+    transition: 0.7s; }
+  .portada p {
+    color: rgba(30, 30, 30, 0.8);
+    letter-spacing: 1.5px;
+    font-size: 30px;
+    padding: 13px;
+    font-weight: 700;
+    opacity: .8;
+    transition: 0.7s;
+    text-align: center;
+    position: absolute;
+    top: 62%;
+    left: 50%;
+    transform: translate(-50%, 0%); }
+  .portada .logoWrapper {
+    height: 230px;
+    width: 230px;
+    margin: 0 auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.7); }
+    .portada .logoWrapper .logoIT {
+      height: 150px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%); }
+      .portada .logoWrapper .logoIT:hover {
+        animation-name: bounce;
+        animation-iteration-count: infinite; }
+      @media screen and (max-width: 600px) {
+        .portada .logoWrapper .logoIT {
+          height: 135px;
+          padding: 10px; } }
 
 .portada:hover {
   transition: 3s; }
@@ -154,13 +207,15 @@ h1, .container, .container-fluid {
       .servicios .servGeneral .servWrapper:hover {
         transition: 0.5s;
         transform: scale(1.06, 1.06); }
+      .servicios .servGeneral .servWrapper:hover img {
+        overflow: hidden; }
       .servicios .servGeneral .servWrapper:hover .textWrapper {
         background-color: white;
         transition: 0.8s;
-        color: #4528B6; }
+        color: #1d114d; }
       .servicios .servGeneral .servWrapper:hover .servBody {
         transition: 0.5s;
-        color: #4528B6; }
+        color: #0e0824; }
       .servicios .servGeneral .servWrapper .servHead {
         padding: 0px; }
         .servicios .servGeneral .servWrapper .servHead .textWrapper {
@@ -177,7 +232,7 @@ h1, .container, .container-fluid {
 
 /*BUSQUEDAS*/
 .encabezado {
-  color: rgba(100, 100, 100, 0.8);
+  color: rgba(30, 30, 30, 0.8);
   text-align: center;
   font-family: 'Catamaran', sans-serif; }
   .encabezado h3 {
@@ -191,7 +246,7 @@ h1, .container, .container-fluid {
 
 .preludeWrapper {
   color: white;
-  background-image: linear-gradient(-20deg, #4528B6 0%, crimson 100%);
+  background-color: #72eeaf;
   padding: 8px;
   border-radius: 10px;
   margin-bottom: 30px; }
@@ -200,7 +255,7 @@ h1, .container, .container-fluid {
     text-align: center; }
 
 .busquedas {
-  background-image: linear-gradient(20deg, whitesmoke 0%, rgba(100, 100, 100, 0.8) 90%);
+  background-image: linear-gradient(20deg, whitesmoke 0%, rgba(30, 30, 30, 0.8) 90%);
   color: black;
   background: whitesmoke; }
   .busquedas .row {
@@ -234,12 +289,12 @@ h1, .container, .container-fluid {
     padding: 20px;
     text-align: center;
     font-family: 'Catamaran', sans-serif;
-    padding: 15px;
+    padding: 10px;
     margin-bottom: 10px;
     border: 10px solid whitesmoke; }
     .busquedas .jobs-result .job-offer {
-      padding: 10x;
-      height: 350px;
+      padding-top: 10x;
+      height: 330px;
       text-align: right;
       background-color: white;
       border: 5px solid whitesmoke; }
@@ -247,13 +302,24 @@ h1, .container, .container-fluid {
         text-align: left;
         padding: 2px;
         margin: 0px; }
+        .busquedas .jobs-result .job-offer p.location {
+          margin-top: 10px; }
+        .busquedas .jobs-result .job-offer p.descripcion {
+          font-size: 13px;
+          color: rgba(30, 30, 30, 0.8);
+          padding: 3px;
+          margin-top: 10px; }
       .busquedas .jobs-result .job-offer .badge {
         font-size: 10px;
         letter-spacing: 1.5px; }
-      .busquedas .jobs-result .job-offer .iconGroup .linkICON {
-        padding: 5px;
-        color: #0077B5;
-        font-size: 40px; }
+      .busquedas .jobs-result .job-offer .iconGroup {
+        position: absolute;
+        bottom: 15px;
+        right: 15px; }
+        .busquedas .jobs-result .job-offer .iconGroup .linkICON {
+          padding: 5px;
+          color: #0077B5;
+          font-size: 40px; }
       .busquedas .jobs-result .job-offer .job-title {
         margin-top: 10px;
         font-weight: 700;
@@ -269,17 +335,15 @@ h1, .container, .container-fluid {
       .busquedas .jobs-result .job-offer:hover .icon {
         transition: 0.8s; }
       .busquedas .jobs-result .job-offer label {
-        color: rgba(100, 100, 100, 0.8);
+        color: rgba(30, 30, 30, 0.8);
         text-align: left; }
 
 .contacto {
-  background: url("/imagenes/web/contact.jpeg") no-repeat;
   background-attachment: fixed;
   background-size: cover;
   position: relative;
-  z-index: 3; }
-  .contacto h3 {
-    color: black; }
+  z-index: 3;
+  padding: 20px; }
   .contacto .row {
     padding: 0px;
     margin: 0px; }
@@ -319,7 +383,7 @@ h1, .container, .container-fluid {
           color: #4528b7;
           transition: 0.7s; }
         #footer-wrapper .copyright .social-media a span {
-          color: #4528B6;
+          color: #0077B5;
           padding: 5px;
           font-size: 30px; }
     #footer-wrapper .copyright p, #footer-wrapper .copyright h5 {
@@ -344,8 +408,13 @@ h1, .container, .container-fluid {
       padding: 10px;
       margin-bottom: 0; }
 
+.admin .linkedin .linkelist {
+  height: 100vh;
+  overflow: scroll; }
 .admin .jobWrapper {
-  padding: 5px; }
+  padding: 5px;
+  height: 100vh;
+  overflow: scroll; }
   .admin .jobWrapper .jobMenu {
     padding: 10px;
     border-bottom: 1px solid #4528B6; }

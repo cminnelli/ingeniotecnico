@@ -8,6 +8,7 @@
 <meta http-equiv="x-ua-compatible" content="ie=edge">
 
 
+
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 <link href='imagenes/icons/venta.png' rel='shortcut icon' type='image/png'>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.js"></script>
@@ -28,24 +29,46 @@
 
 </head>
 	<body ng-init="" ng-app="myApp" ng-controller="mainController">
+
 		<script> new WOW().init() </script>
+		
 		<div id="portada" class="portada wow fadeIn" data-wow-delay="0.2s" >	
-				<nav class="navbar navbar-default">
+				<nav id="navbar" class="navbar navbar-default navbar-fixed-top wow fadeInDown">
 						<div class="container-fluid">
-	
-							<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-							<ul class="nav navbar-nav navbar-center">
-								<li class=""><a href="#">Servicios <span class="sr-only">(current)</span></a></li>
-								<li><a href="#">Deja tu CV</a></li>
-								<li><a href="#">Contacto</a></li>
+						  <!-- Brand and toggle get grouped for better mobile display -->
+						  <div class="navbar-header">
+							<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+							  <span class="sr-only">Toggle navigation</span>
+							  <span class="icon-bar"></span>
+							  <span class="icon-bar"></span>
+							  <span class="icon-bar"></span>
+							</button>
+							<!-- <a class="navbar-brand" href="#"><img src="/imagenes/web/LOGO.png" style="height:100px ; margin-left:10px" alt=""></a> -->
+						  </div>
+					  
+						  <!-- Collect the nav links, forms, and other content for toggling -->
+						  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+							<ul class="nav navbar-nav navbar-left">
+								<li><a href="#"><img id="isotipo" style="height:30px ; display:none" src="/imagenes/web/isotipo.png" alt=""></a></li>
+							  <li><a href="#"><span class="ion-home"></span> Home</a></li>
+							  <li><a href="#"><span class="ion-gear-b"></span> Servicios</a></li>
+							  <li><a href="#"><span class="ion-social-linkedin"></span> Busquedas</a></li>
+							  <li><a href="#"><span class="ion-earth"></span> Contactanos</a></li>
 							</ul>
-							</div><!-- /.navbar-collapse -->
+	
+		
+						  </div><!-- /.navbar-collapse -->
 						</div><!-- /.container-fluid -->
-				</nav>
+					  </nav>
 
 			<div id="mainportada">
-				
-				<img class="logoIT" src="/imagenes/web/LOGO.png" />
+				<div class="logoWrapper wow fadeIn">
+						<img class="logoIT"  src="/imagenes/web/LOGO.png" />
+				</div>
+
+				<div>
+					<!-- <p class="slogans" >Objetivos en comun</p> -->
+				</div>
 
 				<!-- <h1> <div class="icono"><span class="ion-ionic	"></span></div> Buscamos Talento </h1>
 				<p> Bienvenido a Ingenio Tecnico.  Somos una empresa de <span class="destacado"> Recursos humanos </span> 
@@ -56,12 +79,15 @@
 				<button class="draw portada-but2"> Dejanos tu CV</button> -->
 			
 			</div>
+			<div class="transparencia">
+
+			</div>
 		</div>
 
 		<section class = "servicios wow fadeIn">
 			<div class="row">
 				<div class="encabezado wow fadeIn">
-					<h3> <span class="ion-ios-gear"></span>Servicios</h3>
+					<h3> <span class="ion-gear-b"></span>Servicios</h3>
 				</div>
 				
 				<div class="col-xs-12 preludeWrapper wow fadeInUp">
@@ -98,7 +124,7 @@
 								<p><span class="ion-checkmark-circled"></span> Muchas gracias, ya estamos en contacto por alguna eventual busqueda!</p>
 					</div>
 
-					<div class="linkedin-div wow rubberBand">
+					<div class="linkedin-div wow pulse">
 							<span class="ion-checkmark-circled checked-icon"></span>
 							<label for="basic-url">Dejanos tu perfil de linkedin</label>
 							<div class="input-group col-xs-12 col-sm-offset-4 col-sm-4">
@@ -112,17 +138,17 @@
 				</div>
 
 				<div class="col-xs-12 jobs-result wow fadeInUp">
-					<div ng-repeat="job in joboffer"  class="job-offer col-xs-12 col-sm-6 col-md-4 col-lg-3">
+					<div ng-repeat="job in joboffer"  class="job-offer wow fadeInUp col-xs-12 col-sm-6 col-md-4 col-lg-3">
 					<h4 class="job-title"> {{job.puesto}} </h4>
 					<span class="badge badge-success">{{job.seniority}}</span>
 
 						<p> <span class="ion-flag icon"></span>{{job.area}}</p>
 						<div>
-							<label for="">Descripcion:</label>
+							<p class="descripcion">Descripcion</p>
 							<p style="{margin:0px}" ng-repeat="x in job.descripcion"> <span class="ion-code-working icon"></span> {{x}}</p>	
 						</div>
 						
-						<p> <span class="ion-location icon"></span>{{job.location}}</p>
+						<p class="location" > <span class="ion-location icon"></span>{{job.location}}</p>
 						<div class="iconGroup">
 							<a href="{{job.linkedin}}"><span class="linkICON ion-social-linkedin"></span></a>
 						</div>
@@ -139,7 +165,7 @@
 		
 		<section class="contacto wow fadeInUp">
 				<div class="encabezado">
-						<h3> <span class="ion-earth"></span>IT Contacto</h3>
+						<h3> <span class="ion-earth"></span>Contacto</h3>
 				</div>
 
 				<form action="" class="">
@@ -220,7 +246,7 @@
 		<!-- STICKY MOJO SCRIPTS -->
 		<script type="text/javascript" src="/js/otros/stickyMojo.js"></script>
 		<script type="text/javascript" src="/js/otros/stickyConfig.js"></script>
-
+		<script src="/js/otros/portadaFade.js"></script>
 	
 	</body>
 

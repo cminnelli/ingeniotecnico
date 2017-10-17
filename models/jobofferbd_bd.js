@@ -10,7 +10,8 @@ var jobSchema =  new Schema({
 	area:String,
 	location:String,
 	linkedin:String,
-	requisitos:Array	
+	requisitos:Array,
+	fecha:Date	
 	
 
 }, {collection:"joboffer"});

@@ -1,5 +1,25 @@
 admin.controller("adminController" , function($scope , $http){
 
+$scope.removeJob = function(id){
+    var protocol = location.protocol;
+    var host = location.host;
+    var path = "/joboffer_remove/" + id;
+
+    $http({
+        method: 'post',
+        url: protocol + '//' + host + path   // se adapta al entorno
+      }).then(function successCallback(response) {
+          window.location = "/admin";
+
+        }, function errorCallback(response) {
+          // called asynchronously if an error occurs
+          // or server returns response with an error status.
+      });
+
+
+    
+}
+
 
 $scope.mylink;
 $scope.myjob;

@@ -63,9 +63,6 @@ app.service("misServicios", function(){
 			// or server returns response with an error status.
 		  });
 
-
-
-
 				
 	}
 	})	
