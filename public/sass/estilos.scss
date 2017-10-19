@@ -93,8 +93,8 @@ border:none;
 
 .portada{
 	
-	background: url("/imagenes/web/portada8.jpg")  no-repeat top  fixed;
-	//background: url("/imagenes/web/portada8.jpg") no-repeat;
+	background: url("/imagenes/web/portada8.jpg")  no-repeat top;
+	//background: url("/imagenes/web/portadaFinalAjustada.jpg") no-repeat;
 	//background-size:100%;
 	
 	height: 100vh;
@@ -223,7 +223,10 @@ $color-titulos:#484848;
 	background:white;
 	
 		.servGeneral{
-			padding:30px;			
+			padding:30px;
+			@media screen and (max-width:600px){
+				padding:0px;
+			}			
 			.servWrapper{
 				border:10px solid white;
 				margin:0px;
@@ -498,6 +501,12 @@ $color-titulos:#484848;
 			border-right:none;
 			border-left: none;	
 			font-size: 13px;
+			outline: none;
+			border:none;
+			box-shadow: none;
+			background-color: rgba(100,100,100,0.25);
+			color:$main-color;
+			transition: 1.6s;
 			&:focus{
 				outline: none;
 				box-shadow: none;

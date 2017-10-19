@@ -71,7 +71,7 @@ h1, .container, .container-fluid {
 
 /*PORTADA*/
 .portada {
-  background: url("/imagenes/web/portada8.jpg") no-repeat top fixed;
+  background: url("/imagenes/web/portada8.jpg") no-repeat top;
   height: 100vh;
   position: relative;
   z-index: 1000; }
@@ -158,6 +158,9 @@ h1, .container, .container-fluid {
   background: white; }
   .servicios .servGeneral {
     padding: 30px; }
+    @media screen and (max-width: 600px) {
+      .servicios .servGeneral {
+        padding: 0px; } }
     .servicios .servGeneral .servWrapper {
       border: 10px solid white;
       margin: 0px;
@@ -302,7 +305,13 @@ h1, .container, .container-fluid {
   .contacto input, .contacto textarea {
     border-right: none;
     border-left: none;
-    font-size: 13px; }
+    font-size: 13px;
+    outline: none;
+    border: none;
+    box-shadow: none;
+    background-color: rgba(100, 100, 100, 0.25);
+    color: #4528B6;
+    transition: 1.6s; }
     .contacto input:focus, .contacto textarea:focus {
       outline: none;
       box-shadow: none;
