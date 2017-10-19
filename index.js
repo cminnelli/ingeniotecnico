@@ -107,11 +107,8 @@ app.post("/joboffer_new" , function(req,res){
 	var puesto = req.body.puesto;
 	var seniority = req.body.seniority;
 	var area = req.body.area;
-	var descripcion = req.body.descripcion;
-	var requisitos = req.body.requisitos;
-
-	var descripcion2 = descripcion.split(". ");
-
+	var rubro = req.body.rubro;
+	var segmento = req.body.segmento;
 	var location = req.body.location;
 	var linkedin = req.body.linkedin;
 
@@ -119,7 +116,8 @@ app.post("/joboffer_new" , function(req,res){
 	var newJob =  new joboffer({
 	puesto:puesto,
 	seniority:seniority,
-	descripcion:descripcion2,
+	rubro:rubro,
+	rubro:rubro,
 	area:area,
 	location:location,
 	linkedin:linkedin,

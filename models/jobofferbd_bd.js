@@ -6,11 +6,11 @@ var jobSchema =  new Schema({
 	empresa:String,
 	puesto:String,
 	seniority:String,
-	descripcion:Array,
+	rubro:String,
+	segmento:String,
 	area:String,
 	location:String,
 	linkedin:String,
-	requisitos:Array,
 	fecha:Date	
 	
 

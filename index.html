@@ -17,7 +17,7 @@
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <script src="libs/jquery/jquery.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
+<link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
 <link rel="stylesheet" href="css/estilos.css">
 
 
@@ -49,11 +49,11 @@
 						  <!-- Collect the nav links, forms, and other content for toggling -->
 						  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 							<ul class="nav navbar-nav navbar-left">
-								<li><a href="#"><img id="isotipo" style="height:30px ; display:none" src="/imagenes/web/isotipo.png" alt=""></a></li>
+								<!-- <li><a href="#"><img id="isotipo" style="height:30px ; display:none" src="/imagenes/web/isotipo.png" alt=""></a></li> -->
 							  <li><a href="#"><span class="ion-home"></span> Home</a></li>
-							  <li><a href="#"><span class="ion-gear-b"></span> Servicios</a></li>
+							  <li><a href="#"><span class="ion-briefcase"></span> Servicios</a></li>
 							  <li><a href="#"><span class="ion-social-linkedin"></span> Busquedas</a></li>
-							  <li><a href="#"><span class="ion-earth"></span> Contactanos</a></li>
+							  <li><a href="#"><span class="ion-person-stalker"></span> Contactanos</a></li>
 							</ul>
 	
 		
@@ -62,21 +62,13 @@
 					  </nav>
 
 			<div id="mainportada">
-				<div class="logoWrapper wow fadeIn">
+				<div class="logoWrapper">
 						<img class="logoIT"  src="/imagenes/web/LOGO.png" />
 				</div>
-
-				<div>
-					<!-- <p class="slogans" >Objetivos en comun</p> -->
+				<div class="slog">
+					
 				</div>
 
-				<!-- <h1> <div class="icono"><span class="ion-ionic	"></span></div> Buscamos Talento </h1>
-				<p> Bienvenido a Ingenio Tecnico.  Somos una empresa de <span class="destacado"> Recursos humanos </span> 
-				que busca a los mejores <span class="destacado">Ingenieros del mercado </span>
-				en Latinoamerica y otras partes del mundo
-				</p>
-				<button class="draw portada-but"> Sobre Nosotros</button>
-				<button class="draw portada-but2"> Dejanos tu CV</button> -->
 			
 			</div>
 			<div class="transparencia">
@@ -87,14 +79,14 @@
 		<section class = "servicios wow fadeIn">
 			<div class="row">
 				<div class="encabezado wow fadeIn">
-					<h3> <span class="ion-gear-b"></span>Servicios</h3>
+					<h3> <span class="ion-briefcase"></span>Servicios</h3>
 				</div>
 				
-				<div class="col-xs-12 preludeWrapper wow fadeInUp">
+				<!-- <div class="col-xs-12 preludeWrapper wow fadeInUp">
 						<div>
 							<h4>Nuestro objectivo es brindarle los mejores servicios del universo a la mayoria de la gente del planeta tierra</h4>
 						</div>	
-				</div>
+				</div> -->
 				
 				<div class="servGeneral">			
 					<div ng-repeat="serv in servicios" class="servWrapper col-xs-12 col-sm-4 wow fadeInUp">
@@ -139,19 +131,29 @@
 
 				<div class="col-xs-12 jobs-result wow fadeInUp">
 					<div ng-repeat="job in joboffer"  class="job-offer wow fadeInUp col-xs-12 col-sm-6 col-md-4 col-lg-3">
-					<h4 class="job-title"> {{job.puesto}} </h4>
-					<span class="badge badge-success">{{job.seniority}}</span>
+						<div class="job-head">
+								<span class="fa fa-handshake-o"></span>
+								<h4 class="job-title"> {{job.puesto}} </h4>
+								<p>{{job.seniority}}</p>
+						</div>
 
-						<p> <span class="ion-flag icon"></span>{{job.area}}</p>
-						<div>
-							<p class="descripcion">Descripcion</p>
-							<p style="{margin:0px}" ng-repeat="x in job.descripcion"> <span class="ion-code-working icon"></span> {{x}}</p>	
+						<div class="job-body">
+								
+								<p> <span class="ion-flag icon"></span>{{job.area}}</p>
+								<p> <span class="ion-pricetags icon"></span>{{job.rubro}}</p>
+								<p> <span class="ion-pinpoint icon"></span>{{job.segmento}}</p>
+								<p> <span class="ion-location icon"></span>{{job.location}}</p>
+								
+
 						</div>
-						
-						<p class="location" > <span class="ion-location icon"></span>{{job.location}}</p>
+
 						<div class="iconGroup">
-							<a href="{{job.linkedin}}"><span class="linkICON ion-social-linkedin"></span></a>
+								<a href="{{job.linkedin}}"><span class="linkICON ion-social-linkedin"></span></a>
 						</div>
+
+						
+						
+
 		
 
 					</div>
@@ -165,7 +167,7 @@
 		
 		<section class="contacto wow fadeInUp">
 				<div class="encabezado">
-						<h3> <span class="ion-earth"></span>Contacto</h3>
+						<h3> <span class="ion-person-stalker"></span>Contacto</h3>
 				</div>
 
 				<form action="" class="">

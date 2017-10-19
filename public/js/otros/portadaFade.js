@@ -8,10 +8,12 @@ var ima1 = [
 ]
 
 var ima2 = [
-"/imagenes/web/skyline.jpg",
 "/imagenes/web/portada1.jpg",
-
-
+"/imagenes/web/portada2.jpg",
+"/imagenes/web/portada3.jpg",
+"/imagenes/web/portada4.jpg",
+"/imagenes/web/portada5.jpg",
+"/imagenes/web/portada6.jpg"
 ]
 
 
@@ -64,6 +66,7 @@ function changePortada(arrImg ,  time){
 			//console.log("cambiando a " +imgSel)
 			portada.css({
 				background: "url("+ imgSel + ")",
+				backgroundSize:"cover",
 				color: 'white'
 			});
 
@@ -78,20 +81,6 @@ function changePortada(arrImg ,  time){
 	}
 
 
-	window.onscroll = function(){
-		var scry = window.scrollY;
-		var nav = document.getElementById("navbar");
-
-		if (scry > 600){
-			nav.classList.add("highNav")
-
-						
-		}else{
-			nav.classList.remove("highNav")
-		}
-
-
-	}
 
 
 // Wrap every letter in a span
@@ -114,12 +103,15 @@ function navbar(){
 			ima.css({
 				display:"inline-block"
 			})
+
+			$(".navbar-default .navbar-nav>li>a").css({color:"whitesmoke"})
 			
 		}else{
 			nav.removeClass("highNav")
 			ima.css({
 				display:"none"
 			})
+			$(".navbar-default .navbar-nav>li>a").css({color:"rgba(30,30,30,0.8)"})
 		}
 
 
