@@ -21,6 +21,10 @@ app.service("misServicios", function(){
 	$scope.check2 = true; //agregar a index html check2 en linkedin wrapper
 
 	$scope.joboffer;
+
+	$scope.linkopen = function(link){
+		window.open(link);
+	}
 		
 	$scope.saveLinkedin = function(){
 		var profileInput = $("#linkProfile")

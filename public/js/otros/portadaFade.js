@@ -113,8 +113,6 @@ function navbar(){
 			})
 			$(".navbar-default .navbar-nav>li>a").css({color:"rgba(30,30,30,0.8)"})
 		}
-
-
 	}
 
 

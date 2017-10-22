@@ -117,7 +117,7 @@ app.post("/joboffer_new" , function(req,res){
 	puesto:puesto,
 	seniority:seniority,
 	rubro:rubro,
-	rubro:rubro,
+	segmento:segmento,
 	area:area,
 	location:location,
 	linkedin:linkedin,
