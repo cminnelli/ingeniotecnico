@@ -52,7 +52,7 @@ $font-titulos:'Quicksand', sans-serif;
 	z-index:3;
 	.sloganIT{
 		@extend .centerpos;
-		top:63%;
+		top:65%;
 		text-align: center;
 		font-size: 18px;
 		letter-spacing: 2.2px;
@@ -85,6 +85,7 @@ $font-titulos:'Quicksand', sans-serif;
 
 body{
 	font-family: $font-primary;
+	//overflow-y:hidden;
 }
 
 /*BOOTSTRAP MODIFY*/
@@ -131,7 +132,7 @@ $color-whiteopacity:rgba(255, 255, 255, 0.90);
 
 .portada{
 	
-	background: url("/imagenes/web/portada10.jpg")  no-repeat top;
+	background: url("/imagenes/web/portada13.jpg")  no-repeat top;
 	background-attachment: fixed;
 	background-size: cover;
 	background-position:top;
@@ -150,8 +151,8 @@ $color-whiteopacity:rgba(255, 255, 255, 0.90);
 			width: 200px;
 			border-radius: 50%;	
 			@extend .centerpos;
-			top:35%;		
-			//background: $color-whiteopacity;
+			top:55%;		
+			background: $color-whiteopacity;
 			padding:20px;	
 			
 			.logoIT{
@@ -177,7 +178,7 @@ $color-whiteopacity:rgba(255, 255, 255, 0.90);
 /*NAVBAR*/
 
 .navBar{
-
+	
 	width: 100%;
 	position: fixed;
 	z-index: 3;
@@ -473,6 +474,7 @@ $color-titulos:#484848;
 						padding:5px;
 						color:$color-ingenio1;
 						font-size: 40px;
+						cursor:pointer;
 					
 					}
 				}
@@ -532,7 +534,7 @@ $color-titulos:#484848;
 		.linkedin-msg{
 			display: none;
 			text-align: center;
-			color:white;
+			color:black;
 			p{
 				span{
 					color:$secondary-color;
@@ -551,7 +553,9 @@ $color-titulos:#484848;
 
 		}
 		.form-control,.input-group-addon{
-			background-color:transparent;
+			background-color:$color-whiteopacity;
+			border-radius: 5px;
+			text-align: center;
 			outline: none;
 			border:0;
 			box-shadow: 0;

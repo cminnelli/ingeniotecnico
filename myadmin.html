@@ -33,24 +33,59 @@
 <body class="admin" ng-init="initAdmin()"  ng-app="myAdmin" ng-controller="adminController">
 		<script>
 				 $( function() {
-					var availableTags = [
-					  "senior",
-					  "semiSenior",
+					var seniorityTags = [
+					  "Senior",
+					  "SemiSenior",
 					  "Junior",
 					  "Supervisor",
 					  "Jefatura",
 			
 					];
 					$("#seniority").autocomplete({
-					  source: availableTags
+					  source: seniorityTags
 					});
+
+					var rubrosTags = [
+					"Alimenticio", 
+					"Farmaceutico", 
+					"Retail", 
+					"Logistico", 
+					"Comercio Exterior", 
+					"Laboratorio", 
+					"Servicios", 
+					"Metalurgico", 
+					"Comercio", 
+					"Quimico", 
+					"Autopartista", 
+					"Nautica", 
+					"Salud",			
+					];
+
+					$("#rubro").autocomplete({
+					  source: rubrosTags
+					});
+
+
+
+					var segmentoTags = [
+					"Pyme", 
+					"Multinacional", 
+					"Nacional"					
+					];
+
+					$("#segmento").autocomplete({
+					  source: segmentoTags
+					});
+
+
+
 				  } );
 			
 			</script>
 		<section>
 			<script>new WOW().init()</script>
 
-			<div class="col-lg-4 wow fadeInDown">
+			<div class="col-lg-4 wow fadeIn">
 					<div class="encabezado">
 							<h3> <span class="ion-earth"></span>IT JOBOFFER</h3>
 							
@@ -74,11 +109,11 @@
 										<input placeholder="Area" name="area" type="text" class="form-control" id="">
 								</div>
 								<div class="form-group col-xs-12 col-md-8 col-md-offset-2">			
-										<input placeholder="rubro" name="rubro" type="text" class="form-control" id="">
+										<input placeholder="rubro" id="rubro" name="rubro" type="text" class="form-control" id="">
 
 								</div>
 								<div class="form-group col-xs-12 col-md-8 col-md-offset-2">			
-									<input placeholder="segmento" name="segmento" type="text" class="form-control" id="">
+									<input placeholder="segmento" name="segmento" id="segmento" type="text" class="form-control" id="">
 								</div>
 
 								<div class="form-group col-xs-12 col-md-8 col-md-offset-2">			
@@ -102,7 +137,7 @@
 						<div class="transparencia"></div>
 			</div>
 
-			<div class="col-lg-5 wow fadeInUp">
+			<div class="col-lg-5 wow fadeIn">
 					<div class="encabezado">
 							<h3> <span class="ion-earth"></span>IT TRABAJOS</h3>
 					</div>
@@ -119,7 +154,7 @@
 					
 			</div>
 
-			<div class="col-lg-3 wow fadeInDown linkedin">
+			<div class="col-lg-3 wow fadeIn linkedin">
 					<div class="encabezado">
 							<h3> <span class="ion-earth"></span>IT LINKEDIN</h3>
 					</div>
