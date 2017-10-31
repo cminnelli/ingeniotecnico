@@ -59,13 +59,19 @@ function navbar(){
 			})
 
 			$(".navbar-default .navbar-nav>li>a").css({color:"whitesmoke"})
+			$(".nav .navbar-header").css({backgroundColor:"#055174"})
+			$(".navbar-collapse").css({backgroundColor:"#055174"})
+			$(".navbar-default .navbar-nav>li>a").css({color:"whitesmoke"})
+
+			
+
 
 		}else{
 			nav.removeClass("highNav")
 			ima.css({
 			display:"none"
 			})
-			$(".navbar-default .navbar-nav>li>a").css({color:"rgba(30,30,30,0.8)"})
+		
 		}
 	}
 }
@@ -77,6 +83,7 @@ function loading(time){
 	// var protocol = location.protocol;
 	// var host = location.host;
 	// window.location = protocol + '//' + host + '/#loading';
+	
 	$(".sloganIT").hide("fast");
 	$(".logoIT").hide("fast");
 	var ini = false;
@@ -97,9 +104,9 @@ function loading(time){
 
 	setTimeout( function(){
 		$(".loading").fadeOut("slow")
-		// $("body").css({
-		// 	overflowY:"visible",
-		// })
+		$("body").css({
+			overflowY:"visible",
+		})
 		$(".navbar-header , .navbar-default").css({
 			visible:"block",
 		})

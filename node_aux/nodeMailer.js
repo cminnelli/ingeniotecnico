@@ -1,24 +1,27 @@
-// var nodemailer = require('nodemailer');
+var nodemailer = require('nodemailer');
 
-// var transporter = nodemailer.createTransport({
-//   service: 'gmail',
-//   auth: {
-//     user: 'cminnelli@gmail.com',
-//     pass: 'alaska77'
-//   }
-// });
+var transporter = nodemailer.createTransport({
+  service: 'gmail',
+  auth: {
+    user: 'cminnelli@gmail.com',
+    pass: 'alaska77'
+  },
+  tls: {
+    rejectUnauthorized: false
+}
+});
 
-// var mailOptions = {
-//   from: 'cminnelli@gmail.com',
-//   to: 'cminnelli@gmail.com',
-//   subject: 'Sending Email using Node.js',
-//   text: 'That was easy!'
-// };
 
-// transporter.sendMail(mailOptions, function(error, info){
-//   if (error) {
-//     console.log(error);
-//   } else {
-//     console.log('Email sent: ' + info.response);
-//   }
-// });
+
+var enviarMail = function (mailoptionsObj){
+transporter.sendMail(mailoptionsObj, function(error, info){
+  if (error) {
+    console.log(error);
+  } else {
+    console.log('Email sent: ' + info.response);
+  }
+});
+}
+
+
+exports.enviar = enviarMail;

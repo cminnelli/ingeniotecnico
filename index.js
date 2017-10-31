@@ -4,12 +4,8 @@ var app = express();
 const port = process.env.PORT || 3000  
 var path = require("path");
 var fs = require("fs");
-var nodemailer = require("./node_aux/nodeMailer.js")
-//instalar nodemon para actualizar cuando guardo
-
-/*NODE MAILER CALL*/
-// nodemailer.hola("charlie")
-
+var mail = require("./node_aux/nodeMailer.js")
+var mailingenio = "cminnelli@gmail.com";
 
 
 /*MONGO Y MONGOOSE*/
@@ -45,6 +41,25 @@ app.get("/" , function(req,res){
 app.get("/admin" , function(req,res){
 	res.sendFile(path.join(__dirname ,"myadmin.html"));
 })
+
+app.get("/mailcontacto" , function(req,res){
+	res.sendFile(path.join(__dirname ,"contactomsj.html"));
+})
+
+app.post("/sendMail" , function(req,res){
+
+var mailOptions = {
+  from: mailingenio,
+  to: mailingenio,
+  subject: 'Contacto: ' + req.body.nombre +' / Mail: ' + req.body.mail + " / Asunto: " + req.body.asunto,
+  text: req.body.comentario
+};
+
+mail.enviar(mailOptions)
+res.redirect("/mailcontacto")
+})
+
+
 
 app.post("/linkedin/:id" , function(req,res){
 	var link = "https://www.linkedin.com/in/"
@@ -104,6 +119,7 @@ app.get("/linkedinUser" , function(err, res ){
 	})
 
 app.post("/joboffer_new" , function(req,res){
+	var empresa = req.body.empresa;
 	var puesto = req.body.puesto;
 	var seniority = req.body.seniority;
 	var area = req.body.area;
@@ -114,6 +130,7 @@ app.post("/joboffer_new" , function(req,res){
 
 
 	var newJob =  new joboffer({
+	empresa:empresa,
 	puesto:puesto,
 	seniority:seniority,
 	rubro:rubro,
@@ -130,7 +147,7 @@ app.post("/joboffer_new" , function(req,res){
 		if (err){
 			throw err;
 		}else{
-			res.sendFile(path.join(__dirname,"index.html"));
+			res.sendFile(path.join(__dirname,"myadmin.html"));
 		}
 	})	
 
@@ -147,9 +164,7 @@ app.post("/joboffer_remove/:job" , function(req,res){
 
 })
 
-app.get("/hola/:fruits&:papas",function(req,res){
-	res.send(req.params.fruits + req.params.papas)
-})
+
 
 /*RESOLVER*/
 // app.post("/eraseJob:id" , function(err , job){
